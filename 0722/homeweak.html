@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;} 
+        .asd{
+            height: 30px;}
+    </style>
+
+</head>
+<body>
+    <form action="/join" method="">
+        <fieldset>
+            <legend>회원 정보 입력</legend>
+            <p>
+                <label for="userid">아이디</label>
+            </p>
+                <input type="text" id="userid" name="userid" placeholder="아이디를 입력하세요" required>
+            <p>
+                <label for="password">비밀번호</label>
+            </p>
+                <input type="password" id="password" name="password" required>
+            <p>
+                <label for="password_check">비밀번호 확인</label>
+            </p>
+                <input type="password_check" id="password_check" name="password_check" required>
+            <p>
+                <label for="name">이름</label>
+            </p>
+                <input type="text" id="name" name="name" required>
+            <p>
+                <label for="password_check">비밀번호 확인</label>
+            </p>
+                <input type="password_check" id="password_check" name="password_check" required>
+            <p>
+            <label for="phone">연락처</label>
+            </p>
+            <input type="tel"id="phone"size="11"maxlength="11"required/>
+            <p>
+                <label for="date">생년월일</label>
+            </p>
+                <input type="date" id="date">
+            <p>
+                <label for="sex">성별</label>
+            </p>
+                <input type="radio" name="sex"value="man" id="sex">남자
+                <input type="radio" name="sex"value="womon" id="sex">여자
+            <p>
+                <label for="">취미</label>
+            </p>
+                <label><input type="checkbox" value="s_3"checked="checked">Java</label>
+
+                <label><input type="checkbox" value="s_5">HTML</label>
+
+                <label><input type="checkbox" value="f_3">Spring Boot</label>
+            </p>
+            <p>
+                <label for="">지역</label>
+            </p>
+                <form action=""></form>
+                <select name="prod1" id="prod1">
+                <option value="soul">서울</option>
+                <option value="busan">부산</option>
+                <option value="deagu">대구</option>
+                <option value="incheon">인천</option>
+                <option value="gwangju">광주</option>
+                <option value="deajeon">대전</option>
+                <option value="ulsan">울산</option>
+                </select>
+            </p>
+            <p>
+                <label for="job">직업</label>
+            </p>    
+                <input type="text" id="job" name="job" >
+            <p>
+                <label for="">프로필 사진</label>
+            </p>
+                <input type="file" name="" id="">
+            <p>
+                <label for="intro">자기소개</label>
+            </p>
+                <textarea id="intro" name="intro" rows="6" cols="50"></textarea>
+          <div id="button">
+            <input type="submit" value="회원가입" id="" />
+            <input type="reset" value="다시작성" id="" />
+          </div>
+    </form>
+    
+</body>
+</html>
