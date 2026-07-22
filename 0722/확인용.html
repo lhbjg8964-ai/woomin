@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 리스트</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "맑은 고딕", sans-serif;
+        padding: 20px;
+      }
+
+      .product-list {
+        display: flex;
+        gap: 20px;
+      }
+
+      .product {
+        width: 180px;
+        position: relative;
+        border: 1px solid black;
+      }
+
+      .rank {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #ff6b6b;
+        border-radius: 50%;
+        background: #fff;
+        color: #ff6b6b;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .image-box {
+        width: 100%;
+        height: 150px;
+        border: 1px solid #ddd;
+        background: #f5f5f5;
+      }
+
+      .brand {
+        text-align: center;
+        margin-top: 8px;
+        font-size: 14px;
+        color: gray;
+        font-weight: bold;
+      }
+
+      .title {
+        margin-top: 5px;
+        font-size: 13px;
+        line-height: 1.4;
+        height: 38px;
+        overflow: hidden;
+        font-weight: bold;
+      }
+
+      .price-box {
+        margin-top: 8px;
+      }
+
+      .old-price {
+        color: #888;
+        text-decoration: line-through;
+        font-size: 14px;
+      }
+
+      .discount {
+        color: #ff3b30;
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      .price {
+        color: #ff3b30;
+        font-weight: bold;
+        font-size: 28px;
+      }
+
+      .badges {
+        margin-top: 8px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        color: white;
+      }
+
+      .sale {
+        background: #ff5b6b;
+      }
+
+      .delivery {
+        background: #ff7ab8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product-list">
+      <div class="product">
+        <div class="image-box">
+          <img src="images/a1.PNG" height="150" width="177" alt="메디힐" />
+        </div>
+
+        <p class="brand">메디힐</p>
+
+        <p class="title">[15년 연속 1위] 메디힐 에센셜 마스크팩 10매</p>
+
+        <div class="price-box">
+          <span class="old-price">20,000원</span><br />
+          <span class="discount">50%</span>
+          <span class="price">10,000원~</span>
+        </div>
+
+        <div class="badges">
+          <span class="badge sale">세일</span>
+          <span class="badge delivery">오늘드림</span>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="image-box">
+          <img src="images/a2.PNG" height="150" width="177" alt="나르카" />
+        </div>
+
+        <p class="brand">나르카</p>
+
+        <p class="title">프레시 세범 세이버 미니 리스트</p>
+
+        <div class="price-box">
+          <span class="old-price">18,000원</span><br />
+          <span class="discount">10%</span>
+          <span class="price">16,200원~</span>
+        </div>
+
+        <div class="badges">
+          <span class="badge sale">세일</span>
+          <span class="badge delivery">오늘드림</span>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="image-box">
+          <img src="images/a3.PNG" height="150" width="177" alt="메디큐브" />
+        </div>
+
+        <p class="brand">메디큐브</p>
+
+        <p class="title">에이지 모공패드 리필 기획</p>
+
+        <div class="price-box">
+          <span class="old-price">33,000원</span><br />
+          <span class="discount">22%</span>
+          <span class="price">25,900원</span>
+        </div>
+
+        <div class="badges">
+          <span class="badge sale">세일</span>
+          <span class="badge delivery">오늘드림</span>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="image-box">
+          <img src="images/a4.PNG" height="150" width="177" alt="" />
+        </div>
+
+        <p class="brand">플라이밀</p>
+
+        <p class="title">단백질쉐이크 4종 12종 택1</p>
+
+        <div class="price-box">
+          <span class="old-price">5,900원</span><br />
+          <span class="price">3,900원~</span>
+        </div>
+
+        <div class="badges">
+          <span class="badge sale">1+1</span>
+          <span class="badge delivery">오늘드림</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -49,7 +49,7 @@ public class Logical {
             System.out.println("가을입니다.");
         }else if(season == 12 || season == 1 || season == 2);{
             System.out.println("겨울입니다.");
-        }else{
+        }{
             System.out.println("입력이 잘못되었습니다.");
         }
 
