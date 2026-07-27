@@ -5,8 +5,8 @@ public class 문제4_2코드작성 {
         int r = 7;
         double c = 2 * Math.PI * r;
         double a = Math.PI * Math.pow(r, 2);
-        System.out.printf("원의 둘레 : %.1f\n", c);
-        System.out.printf("원의 넓이 : %.1f\n", a);
+        System.out.printf("원의 둘레 : %.2f\n", c);
+        System.out.printf("원의 넓이 : %.2f\n", a);
         }
     }
     
