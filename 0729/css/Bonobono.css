@@ -1,0 +1,109 @@
+*{margin: 0;padding: 0;}
+.bigbox{
+    position: absolute;
+    width: 500px;
+    height:500px;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+}
+.face{
+    position: absolute;
+    bottom: 0;
+    width: 500px;
+    height: 500px;
+    border: 6px solid #333;
+    background-color: rgb(140, 213, 255);
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.eye{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #333;
+    background-color: #000;
+    border-radius: 50%;
+    top: 197px;
+    box-sizing: border-box;
+}
+.eye.left{
+    left: 96px;
+}
+.eye.right{
+    right: 96px;
+}
+.nose{
+    position: absolute;
+    width: 47px;
+    height: 47px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    background-color: #000;
+    box-sizing: border-box;
+    left: 218px;
+    bottom: 158px;
+}
+.mouth{
+    position: absolute;
+    width: 107px;
+    height: 85px;
+    border: 4px solid #000;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 50%;
+}
+.mouth.left{
+    transform: rotate(-45deg);
+    left: 155px;
+    bottom: 90px;
+}
+.mouth.right{
+    transform: rotate(45deg);
+    left: 220px;
+    bottom: 90px;
+}
+
+.line{
+    position: absolute;
+    width: 82px;
+    height: 2px;
+    background-color: #333;
+}
+.bread.left{
+    position: absolute;
+    top: 70px;
+    left: 75px;
+}
+.line.left1{
+    bottom: 34px;
+    left: -3px;
+    transform: rotate(-20deg);
+}
+.line.left3{
+    top: 34px;
+    left: -3px;
+    transform: rotate(20deg);
+
+}
+
+.bread.right{
+    position: absolute;
+    top: 70px;
+    right: 75px;
+}
+.line.right1{
+    bottom: 34px;
+    right: -3px;
+    transform: rotate(20deg);
+}
+.line.right2{
+    right: 0px;
+}
+.line.right3{
+    top: 34px;
+    right: -3px;
+    transform: rotate(-20deg);
+
+}
