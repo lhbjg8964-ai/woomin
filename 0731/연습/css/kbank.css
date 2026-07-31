@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+/* 전체 위쪽 영역 */
+.section1 {
+    width: 1000px;
+    height: 375px;
+    margin: 10px auto 0;
+    border: 1px solid #333;
+    padding-top: 30px;
+}
+
+/* 카드 3개를 가로 정렬 */
+.bigbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 각각의 카드 */
+.bigbox > li {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #222;
+}
+
+/* 카드 내부 여백 */
+.bigbox > li > div {
+    padding: 20px 30px;
+}
+
+/* 추천상품, 서비스 박스 */
+.txt1 {
+    margin-bottom: 12px;
+}
+
+.txt1 span {
+    display: inline-block;
+    background-color: #63aeb1;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 8px;
+}
+
+/* 카드 제목 */
+.txt2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+/* 카드 설명 */
+.txt3 {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #111;
+}
