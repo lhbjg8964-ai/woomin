@@ -2,25 +2,25 @@ package a0721;
 
 public class increment {
     public static void main(String[] args) {
-        System.out.println("=== 전위 증가 연산자 (변수)===");
+        System.out.println("=== 전위 증가 연산자 (++변수) ===");
         int a = 5;
-        System.out.println("초기값 a =" + a ); //5
-        a++; // a = a + 1
-        System.out.println("증가 a =" + a); // 6
+        System.out.println("초기값 a = " + a);//5
+        a++; //a = a + 1
+        System.out.println("증가 a = " + a); //6
 
-        int b = ++a; // a 를 먼저 즐가시킨 후 (7), b에 할당
-        System.out.println(" a =" + a); // 6
-        System.out.println(" b =" + b); // 7
-
+        int b = ++a; //a 를 먼저 증가 시킨후 (7) , b 에할당
+        System.out.println("a = " + a); // 7
+        System.out.println("b = " + b); // 7
+        
         System.out.println("=== 후위 증가 연산자 (변수++) ===");
-        int c =5;
-        System.out.println("초기값 c =" + c); //5
+        int c = 5;
+          System.out.println("초기값 c = " + c);//5
 
-        int d = c++; //c의 현재값(5)를 d에 할당한 후 , c를 1증가ㅣ
-        System.out.println("c =" + c); // 6
-        System.out.println("d =" + d); // 5
+        int d = c++; //c의 현재값(5)를 d 에 할당한 후 , c 를 1  증가
+        System.out.println("c = " + c);  // 6
+        System.out.println("d = " + d);  // 5
 
-        System.out.println("\n=== 전위 감소 연산자 (--변수) ===");
+System.out.println("\n=== 전위 감소 연산자 (--변수) ===");
         int e = 10;
         System.out.println("초기값 e = " + e);
         
@@ -38,5 +38,4 @@ public class increment {
         System.out.println("g = " + g);  // 9
         System.out.println("h = " + h);  // 10
     }
-    
 }

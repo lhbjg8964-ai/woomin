@@ -1,7 +1,7 @@
 package a0804.abstract2;
 
-public class PartTime extends Employee{
-
+public class PartTime  extends Employee{
+    
     public PartTime(String name) {
         super(name);
     }
@@ -10,5 +10,4 @@ public class PartTime extends Employee{
     public int getSalary() {
         return 1800000;
     }
-    
 }

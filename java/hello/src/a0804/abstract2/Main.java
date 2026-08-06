@@ -11,5 +11,4 @@ public class Main {
         e2.work();
         System.out.println("급여 : " + e2.getSalary());
     }
-    
 }

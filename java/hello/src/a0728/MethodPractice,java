@@ -1,0 +1,66 @@
+public class MethodPractice {
+    public static void main(String[] args) {
+        // 1. 덧셈 메서드 테스트
+        int sumResult = add(10, 20);
+        System.out.println("1. 덧셈 결과: " + sumResult); // 30
+
+        // 2. 짝수/홀수 판별기 테스트
+        boolean checkEven = isEven(7);
+        System.out.println("2. 7은 짝수인가요? " + checkEven); // false
+
+        // 3. 배열의 최댓값 찾기 테스트
+        int[] numbers = {15, 82, 34, 91, 48};
+        int maxVal = getMax(numbers);
+        System.out.println("3. 배열의 최댓값: " + maxVal); // 91
+
+        // 4. 문자열 반복 출력하기 테스트
+        System.out.print("4. ");
+        printMessage("자바 ", 3); // 자바 자바 자바 
+        System.out.println();
+
+        // 5. 학점 계산기 테스트
+        char grade = getGrade(85);
+        System.out.println("5. 85점의 학점: " + grade); // B
+    }
+
+    // --- 문제 1 정답 ---
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    // --- 문제 2 정답 ---
+    public static boolean isEven(int num) {
+        return num % 2 == 0;
+    }
+
+    // --- 문제 3 정답 ---
+    public static int getMax(int[] arr) {
+        int max = arr[0]; // 첫 번째 값으로 초기화
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    // --- 문제 4 정답 ---
+    public static void printMessage(String text, int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.print(text);
+        }
+    }
+
+    // --- 문제 5 정답 ---
+    public static char getGrade(int score) {
+        if (score >= 90) {
+            return 'A';
+        } else if (score >= 80) {
+            return 'B';
+        } else if (score >= 70) {
+            return 'C';
+        } else {
+            return 'F';
+        }
+    }
+}

@@ -1,14 +1,13 @@
-package a0804.Interface1;
+package a0804.interface1;
 
 public class Main {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         Flayable f1 = new Bird();
-        Flayable f2 = new Airplane();
+        Flayable f2 = new AirPlane();
 
         f1.fly();
         f2.fly();
-    }
-    
+     }
 }
 //  추상과 인터페이스 차이
 // 키워드 -     추상- abstract        인터 - interface

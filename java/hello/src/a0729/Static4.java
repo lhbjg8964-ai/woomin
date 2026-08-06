@@ -1,14 +1,15 @@
 package a0729;
-//일반 메서드
+//일반메서드
 public class Static4 {
     public static void main(String[] args) {
-        Static4 st = new Static4();
-        st.hello();
-        //함수도 static을 붙이면 객체 생성이 필요없다.
+       Static4 st = new Static4();
+       st.hello();
+
+       
     }
 
-    private static void hello() {
-        System.out.printf("안녕하세요");
+    private  void hello() {
+       System.out.println("안녕하세요");
     }
-    
 }
+

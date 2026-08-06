@@ -2,8 +2,7 @@ package a0721;
 
 public class Var4 {
     public static void main(String[] args) {
-        
-         //정수형
+          //정수형
          int age = 25;
          age = 26; //변수 값 변경 가능
         long population = 7800000000L;
@@ -17,23 +16,21 @@ public class Var4 {
         // 논리형
         boolean isStudent = true;
 
-        //ckawh wkfygud(String)
+        //참조 자료형(String)
         String name = "홍길동";
 
         //상수
         final double PI = 3.14159;
         final int MAX_SCORE = 100;
-        //PI = 1.19; 상수는 변경이 불가능
 
-        //출력
-        System.out.println("이름"+ name);
-        System.out.println("나이"+ age);
-        System.out.println("키"+ height + "cm");
-        System.out.println("학생여부"+ isStudent);
-        System.out.println("원주율"+ PI);
+        // PI = 1.19; 상수는 변경 불가능 
 
+     // 출력
+        System.out.println("이름: " + name);
+        System.out.println("나이: " + age);
+        System.out.println("키: " + height + "cm");
+        System.out.println("학생 여부: " + isStudent);
+        System.out.println("원주율: " + PI);
         
-
     }
-    
 }

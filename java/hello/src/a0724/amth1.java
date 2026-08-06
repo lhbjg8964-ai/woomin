@@ -1,3 +1,5 @@
+package a0724;
+
 public class amth1 {public static void main(String[] args) {
     // 1, 절대값 math abs
     System.out.println("===== Math.abs() =====");

@@ -2,23 +2,24 @@ package a0721;
 
 public class Var1 {
     public static void main(String[] args) {
-
-        System.out.println("=== 변수 ===");
+       
+        System.out.println("==== 변수 ====");
         // 변수(Varialbe) - 데이터를 저장하는 공간
-        String name1 = "이우민"; // 문자열
+        String name1 = "허준석";//문자열
         System.out.println(name1);
-        int age =26; // 정수
+        int age = 30; //정수
         System.out.println(age);
-        double height = 180.0; // 실수
+        double height = 175.5; //실수
         System.out.println(height);
 
-        System.out.println(" 이름" + name1);
-        System.out.println(" 나이" + age);
+        System.out.println("이름 :" + name1);
+        System.out.println("나이 : "+ age);
 
         int score = 80;
         System.out.println(score);
-        score =100;
+        score = 100;
         System.out.println(score);
+
+
     }
-    
 }

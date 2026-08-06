@@ -1,11 +1,12 @@
-package a0803.Over;
+package a0803.over;
 
-public class Dog extends Animal{
+public class Dog extends Animal {
 
     @Override
     public void sound() {
         System.out.println("멍멍!");
     }
-
     
+    
+
 }

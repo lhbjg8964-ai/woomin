@@ -1,3 +1,5 @@
+package a0724;
+
 public class ScoreArray {
     public static void main(String[] args) {
             // 학생 5명의 국어, 영어, 수학 점수

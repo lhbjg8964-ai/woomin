@@ -1,14 +1,15 @@
 package a0727;
 
-public class switch1 {public static void main(String[] args) {
-    int menu =2;
+public class Switch1 {
+    public static void main(String[] args) {
+        int menu = 2;
 
-    switch(menu){
+        switch(menu){
 
         case 1:
             System.out.println("김밥");
             break;
-            
+
         case 2:
             System.out.println("라면");
             break;
@@ -17,11 +18,9 @@ public class switch1 {public static void main(String[] args) {
             System.out.println("돈까스");
             break;
 
-        case 4:
+        default:
             System.out.println("없음");
 
-
+        }
     }
-}
-    
 }

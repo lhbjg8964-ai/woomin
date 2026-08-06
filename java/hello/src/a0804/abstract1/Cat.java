@@ -1,6 +1,6 @@
 package a0804.abstract1;
 
-public class Cat extends Animal{
+public class Cat extends Animal {
 
     public Cat(String name) {
         super(name);
@@ -8,6 +8,6 @@ public class Cat extends Animal{
 
     @Override
     void makeSound() {
-        System.out.println(name + "이(가0 야옹 웁니다.");
-    }
+      System.out.println(name + "이(가) 야옹 웁니다.");
+    }  
 }

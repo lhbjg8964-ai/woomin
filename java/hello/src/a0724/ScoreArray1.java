@@ -1,3 +1,5 @@
+package a0724;
+
 import java.util.Scanner;
 
 public class ScoreArray1 {

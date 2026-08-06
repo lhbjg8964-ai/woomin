@@ -1,9 +1,9 @@
-package a0803.Animal;
+package a0803.animal;
 
 public class Dog extends Animal {
-
-    public void vakr(){
+    
+    public void bark(){
         System.out.println("멍멍!");
     }
-    
+
 }

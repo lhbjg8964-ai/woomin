@@ -1,11 +1,8 @@
 package a0729;
 
-import a0720.string;
-
 public class Car1 {
     String brand;
     String color;
-
 
     public static void main(String[] args) {
         Car1 car = new Car1();

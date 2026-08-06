@@ -1,9 +1,8 @@
-package a0803.Over;
+package a0803.over;
 
-class Animal {
+ class Animal {
     String name;
     public void sound() {
         System.out.println("동물이 소리를 냅니다.");
     }
-    
 }

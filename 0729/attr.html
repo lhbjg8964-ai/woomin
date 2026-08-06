@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- 기본 16px  -->
 <style>
-.f1{font-size: 32px;}
-.f2{font-size: 2em;} /* 16 * 2 */
-.f3{font-size: 2rem;}/* 16 * 2 */
-.font2 span{font-size: 2em;}
-.font3 span{font-size: 2rem;}
-
+input[type="text"] {
+    background-color: #f0f0f0;
+}
+/* 속성 값이 포함 */
+a[href*="example"] {
+    color: red;
+}
 </style>
+
 </head>
 <body>
-    <div>
-        <p class="f1">폰트1</p>    
-        <p class="f2">폰트2 <span>자식폰트</span></p>    
-        <p class="f3">폰트3 <span>자식폰트</span> </p>    
-        <p class="f4">폰트4</p>    
-    </div>
+    <form action="">
+        <input type="text">
+        <input type="email">
+        <a href="https://example.com">링크</a>
+
+    </form>
 </body>
 </html>

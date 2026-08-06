@@ -1,10 +1,10 @@
-package a0804.Interface1;
+package a0804.interface1;
 
-public class Airplane implements Flayable{
+public class AirPlane implements Flayable {
 
     @Override
     public void fly() {
-        System.out.println("비행기가 이륙합니다");
+        System.out.println("비행기가 이륙합니다.");
     }
     
 }
