@@ -1,13 +1,24 @@
-package a0804.interface1;
+package a0804.Interface1;
+
+interface Flayable {
+    void fly();
+}
+
+class Bird implements Flayable {
+    @Override
+    public void fly() {
+        System.out.println("새가 날아갑니다.");
+    }
+}
 
 public class Main {
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         Flayable f1 = new Bird();
-        Flayable f2 = new AirPlane();
+        Flayable f2 = new Bird();
 
         f1.fly();
         f2.fly();
-     }
+    }
 }
 //  추상과 인터페이스 차이
 // 키워드 -     추상- abstract        인터 - interface

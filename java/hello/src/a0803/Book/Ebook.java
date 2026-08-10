@@ -1,4 +1,4 @@
-package a0803.book;
+package a0803.Book;
 
 public class Ebook extends Book {
     private double fileSize; //파일 크기(MB)

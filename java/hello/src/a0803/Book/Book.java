@@ -1,4 +1,4 @@
-package a0803.book;
+package a0803.Book;
 
 public class Book {
     private String title; //책제목

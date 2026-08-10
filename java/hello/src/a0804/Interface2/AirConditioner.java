@@ -1,4 +1,4 @@
-package a0804.interface2;
+package a0804.Interface2;
 
 public class AirConditioner implements RemoteControl {
     @Override

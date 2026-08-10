@@ -6,91 +6,92 @@ import java.util.Scanner;
 public class BookApp {
     public static void main(String[] args) {
         ArrayList<Book> list = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
-        boolean run = true;
-       // 더미 데이터
-        list.add(new Book("자바의 정석", "남궁성"));
-        list.add(new Book("혼자 공부하는 자바", "신용권"));
-        list.add(new Book("이것이 자바다", "신용권"));
-        while (run) {
-            System.out.println("------------------------");
-            System.out.println("1. 도서 등록");
-            System.out.println("2. 도서 검색");
-            System.out.println("3. 도서 수정");
-            System.out.println("4. 도서 삭제");
-            System.out.println("5. 전체 출력");
-            System.out.println("6. 종료");
-            System.out.print("선택 > ");
+        try (Scanner sc = new Scanner(System.in)) {
+            boolean run = true;
+      // 더미 데이터
+            list.add(new Book("자바의 정석", "남궁성"));
+            list.add(new Book("혼자 공부하는 자바", "신용권"));
+            list.add(new Book("이것이 자바다", "신용권"));
+            while (run) {
+                System.out.println("------------------------");
+                System.out.println("1. 도서 등록");
+                System.out.println("2. 도서 검색");
+                System.out.println("3. 도서 수정");
+                System.out.println("4. 도서 삭제");
+                System.out.println("5. 전체 출력");
+                System.out.println("6. 종료");
+                System.out.print("선택 > ");
 
-            int menu;
-            try {
-               menu  = Integer.parseInt(sc.nextLine()); //문자 1,2,3 로 입력받아 숫자로 변환 
-            } catch (Exception e) { //예외발생 (a 라는 문자입력)
-               System.out.println("숫자만 입력하세요 ");
-               continue; //while 문으로 다시 선택할 수 있게 해준다.
-            }
+                int menu;
+                try {
+                   menu  = Integer.parseInt(sc.nextLine()); //문자 1,2,3 로 입력받아 숫자로 변환 
+                } catch (Exception e) { //예외발생 (a 라는 문자입력)
+                   System.out.println("숫자만 입력하세요 ");
+                   continue; //while 문으로 다시 선택할 수 있게 해준다.
+                }
 
-            switch (menu) {
-                case 1://등록
-                    System.out.print("제목 입력 : ");
-                    String title = sc.nextLine();
+                switch (menu) {
+                    case 1://등록
+                        System.out.print("제목 입력 : ");
+                        String title = sc.nextLine();
 
-                    System.out.print("저자 입력 : ");
-                    String author = sc.nextLine();
-                    list.add(new Book(title, author)); //생성
-                    break;
-                case 2: //검색
-                     System.out.print("검색할 제목 : ");
-                     title = sc.nextLine();
-                     Book b = findBook(list, title);
-                     if(b != null){
-                        System.out.println(b);
-                     }else{
-                        System.out.println("도서가 없습니다.");
-                     }
-                     break;
-                case 3: //도서수정 - 도서찾기가 선행
-                    System.out.print("수정할 제목 : ");
-                     title = sc.nextLine();
+                        System.out.print("저자 입력 : ");
+                        String author = sc.nextLine();
+                        list.add(new Book(title, author)); //생성
+                        break;
+                    case 2: //검색
+                         System.out.print("검색할 제목 : ");
+                         title = sc.nextLine();
+                         Book b = findBook(list, title);
+                         if(b != null){
+                            System.out.println(b);
+                         }else{
+                            System.out.println("도서가 없습니다.");
+                         }
+                         break;
+                    case 3: //도서수정 - 도서찾기가 선행
+                        System.out.print("수정할 제목 : ");
+                         title = sc.nextLine();
 
-                    System.out.print("새 저자 입력 : ");
-                    author = sc.nextLine();
-                    
-                    if(updateBook(list, title, author)){
-                        System.out.println("수정완료");
-                    }else{
-                        System.out.println("해당도서가 없습니다.");
-                    }
-                    break;
-                case 4: //도서 삭제
-                     System.out.print("삭제할 제목 : ");
-                     title = sc.nextLine();
-                     if(deleteBook(list, title)){
-                        System.out.println("삭제완료");
-                     } else{
-                         System.out.println("삭제할도서가 없습니다.");
-                     }  
-                    break;
-                case 5://조회(전체출력)
-                    if(list.isEmpty()){
-                       System.out.println("등록된 도서가 없습니다.");     
-                    }else{
-                        for(Book book :list){
-                            System.out.println(book);
-                            // toString 만들어져 있으므로 출력
+                        System.out.print("새 저자 입력 : ");
+                        author = sc.nextLine();
+                        
+                        if(updateBook(list, title, author)){
+                            System.out.println("수정완료");
+                        }else{
+                            System.out.println("해당도서가 없습니다.");
                         }
-                    }
-                    break; 
-                case 6: //종료
-                    run = false;
-                    System.out.println("프로그램 종료");
-                    break;
-                    
-                default:
-                    System.out.println("1~6번 중에 선택");
+                        break;
+                    case 4: //도서 삭제
+                         System.out.print("삭제할 제목 : ");
+                         title = sc.nextLine();
+                         if(deleteBook(list, title)){
+                            System.out.println("삭제완료");
+                         } else{
+                             System.out.println("삭제할도서가 없습니다.");
+                         }  
+                        break;
+                    case 5://조회(전체출력)
+                        if(list.isEmpty()){
+                           System.out.println("등록된 도서가 없습니다.");     
+                        }else{
+                            for(Book book :list){
+                                System.out.println(book);
+                                // toString 만들어져 있으므로 출력
+                            }
+                        }
+                        break; 
+                    case 6: //종료
+                        run = false;
+                        System.out.println("프로그램 종료");
+                        break;
+                        
+                    default:
+                        System.out.println("1~6번 중에 선택");
+                }
+
+
             }
-
-
         }
 
     }

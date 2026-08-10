@@ -1,4 +1,4 @@
-package a0803.student;
+package a0803.Student;
 
 public class Main1 {
     

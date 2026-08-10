@@ -34,12 +34,8 @@ public class amth1 {public static void main(String[] args) {
     // 0~1 미만
     System.out.println("0~1 미만 난수 : " + Math.random());
 
-    // 1~10
-    int num1 = (int)(Math.random()* 10) + 1;
     System.out.println("1~10 미만 난수 : " + Math.random());
 
-    // 로또번호
-    int num2 = (int)(Math.random()* 45) + 1;
     System.out.println("1~10 미만 난수 : " + Math.random());
 
 

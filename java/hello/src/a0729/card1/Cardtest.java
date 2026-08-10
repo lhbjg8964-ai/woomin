@@ -1,6 +1,6 @@
 package a0729.card1;
 
-public class CardTest {
+public class Cardtest {
     public static void main(String[] args) {
         Card c1 = new Card();
         c1.kind = "Heart";

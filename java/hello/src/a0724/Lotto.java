@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package a0724;
 
 public class Lotto {
     public static void main(String[] args) {

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+header {
+    width:1000px;
+    height:500px;
+    margin: 0 auto;
+    border:1px solid #000;
+    background-color: aqua;
+    background-image: url(images/tree.png);
+    background-repeat: no-repeat;/*이미지 반복안함 한개만 나옴*/
+    /*background-position: right top; 오른쪽 상단*/
+    background-position: 70% 50%;
+}
+section{
+    width:1000px;
+    height:500px;
+    margin: 0 auto;
+    border:1px solid #000;
+    background-color: rgb(133, 152, 35);
+    background-image: url(images/top.jpg);
+    background-repeat: no-repeat;
+    /* background-size: contain; */
+    background-size: cover;
+}
+footer{
+     width:1000px;
+    height:500px;
+    margin: 0 auto;
+    border:1px solid #000;
+    background-color: rgb(221, 197, 58);
+    /* 배경이미지 두개이상 */
+    background-image: url(images/muzi.png), url(images/dot.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top, right bottom;
+}
+
+
+</style>
+
+</head>
+<body>
+    <!-- <div class="header">예전방식(헤더)</div>
+    <div class="main">예전방식(메인)</div>
+    <div class="footer">예전방식(푸터)</div> -->
+    <header>요즈음 헤더</header>
+    <section>요즈음(메인 - main 태그도 있음)</section>
+    <footer>푸터 - 이런 의미있는태그를 시멘틱 태그</footer>
+
+</body>
+</html>

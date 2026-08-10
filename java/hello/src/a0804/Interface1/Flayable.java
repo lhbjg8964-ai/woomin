@@ -1,4 +1,4 @@
-package a0804.interface1;
+package a0804.Interface1;
 
 // interface 키워드 사용
 // 객체 생성 불가

@@ -1,7 +1,5 @@
 package a0721;
 
-import a0720.string;
-
 public class Pl { public static void main(String[] args) {
     // 1-2번 문제
     int score = 80;

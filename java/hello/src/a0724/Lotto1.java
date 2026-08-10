@@ -2,7 +2,7 @@ package a0724;
 
 import java.util.Arrays;
 
-public class lotto1 {
+public class Lotto1 {
     public static void main(String[] args) {
         //ball 변수 45개 정수값을 저장하기위한 배열 생성
         int[] ball = new int[45];

@@ -1,6 +1,6 @@
 package a0728;
 //문자열 길이
-public class MethodEx10 {
+public class Methodex10 {
     public static void main(String[] args) {
         
         System.out.println(length("java"));

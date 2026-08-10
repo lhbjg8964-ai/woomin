@@ -5,14 +5,7 @@ public class Var3 {
         
         int var1 = 10;
         System.out.println(var1);
-        int _var2 = 20;
-        int $var3 = 30;
-
-        //int #var4 = 40;  특수문자는 _ , $ 로만 시작
-        int var5 = 1000000000; // 4byte int 범위 초과 -2,147,483,648 ~ 2,147,483,647
-        long var6 = 10000000000L; //8byte 아주큰 정수 -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807
         double doubleVar = 3.141592653589793; //8byte
-        float floatVar = 3.14F; //float 접미사 F or f   
         System.out.println(doubleVar);
 
         byte byteVar = 127;

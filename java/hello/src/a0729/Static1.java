@@ -1,6 +1,6 @@
 package a0729;
 
-public class static1 {
+public class Static1 {
     static int num = 100;
     public static void main(String[] args) {
         // main static -  num은 일반 변수 - 객체생성없이 num 사용못함

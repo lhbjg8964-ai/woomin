@@ -1,11 +1,8 @@
 package a0804.interab;
 
 public class Bird extends Animal implements Flyable {
-    private String species;
-
     public Bird(String name, int age, String species) {
         super(name, age);
-        this.species = species;
     }
 
 

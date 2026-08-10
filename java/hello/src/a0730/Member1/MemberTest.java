@@ -1,4 +1,4 @@
-package a0730.member1;
+package a0730.Member1;
 
 public class MemberTest {
     public static void main(String[] args) {

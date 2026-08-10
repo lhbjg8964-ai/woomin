@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 문서정보 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.list1{
+    list-style: none;
+    /* float: left; li 에 적용려면 .list1 에 반듯이 높이를 줘야함 */
+    height:30px ; 
+    /* 1. 직접높이를 주는방법 */
+    /* 2.   overflow: hidden;  높이를 구현하는 방법 */
+}
+/* .list1 li{
+    display: inline-block;
+    background-color: aqua;
+} */
+
+.list1 li{
+    float: left;
+    background-color: aqua;
+}
+
+.list2{
+    list-style: none;
+}
+.list3{
+    list-style: square;
+}
+
+</style>
+
+</head>
+<body>
+    <h1>헤딩태그   </h1>
+        <p>안녕하세요</p>
+        <br/>
+        <hr>
+
+        <pre>
+            sdfdsfsd
+            그대로출력
+               들여쓰기도 되고 
+               화면에 보이는게 출력
+        </pre>
+        <b>굵게</b>
+
+        <strong>중요</strong>
+
+        <em>기울임</em>
+         <i>기울임</i>
+
+        <ins>밑줄</ins>
+        <u>밑줄</u>
+        <mark>형광펜</mark>
+
+        <del>삭제</del>
+
+        H<sub>2</sub>O
+
+        2<sup>3</sup>
+
+
+        <p><a href="https://google.com">구글</a></p>
+        <p><a href="https://google.com" target="_blank">구글 새창열기</a></p>
+
+        <p><img src="images/cat1.jpg" alt="고양이1" width="300"></p>
+        <p><img src="images/cat2.jpg" alt="고양이2" style="width: 300px;"></p>
+
+        <ul class="list1">
+            <li>사과</li>
+            <li>배</li>
+            <li>포도</li>
+        </ul>
+        <ul class="list2">
+            <li>사과</li>
+            <li>배</li>
+            <li>포도</li>
+        </ul>
+        <ul class="list3">
+            <li>사과</li>
+            <li>배</li>
+            <li>포도</li>
+        </ul>
+
+
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
+        <!-- 사용자 정의목록 -->
+        <dl>
+            <dt>HTML</dt>
+            <dd>웹의 구조</dd>
+
+            <dt>CSS</dt>
+            <dd>디자인</dd>
+        </dl>
+
+        <table border="1">
+
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+            </tr>
+
+            <tr>
+                <td>홍길동</td>
+                <td>20</td>
+            </tr>
+
+        </table>
+
+        <form>
+
+            <input type="text">
+            <input type="password">
+            <input type="email">
+            <input type="number">
+            <input type="date">
+            <input type="submit">
+        </form>
+        <form action="">
+            <input type="text">
+            <textarea></textarea>
+            <select>
+            <option>HTML</option>
+            <option>CSS</option>
+            </select>
+        </form>
+        <p>
+            <video autoplay muted loop>
+                <source src="media/jang.mp4" type="video/mp4">
+            </video>
+        </p>
+         <p>
+            <video controls>
+                <source src="media/jang.mp4" type="video/mp4">
+            </video>
+        </p>
+        
+</body>
+</html>

@@ -1,4 +1,4 @@
-package a0803.animal;
+package a0803.Animal;
 
 //상속을 하는 이유
 //같은 코드를 여러번 작성하지 않아도 된다.
