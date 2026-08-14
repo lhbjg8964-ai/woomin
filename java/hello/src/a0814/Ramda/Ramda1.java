@@ -1,4 +1,4 @@
-package a0810;
+package a0814.Ramda;
 
 // 무엇을 할지만 정의
 interface Calculator{

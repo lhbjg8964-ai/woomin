@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var i = 2;
+    var sum = 0;
+    document.write(i + "단<br>");
+    for (var j = 1; j <= 9; j++) {
+        sum = i * j;
+        // document.write(i + "×" + j + " = " + sum + "<br>");
+        // 백틱문법 (템플릿 리터럴)사용법
+        // 변수는 무조건 $(변수명)
+        // 따옴표나 쌍따옴표는 생략 전체를 ``(백틱) 이걸로 감싼다
+        // document.write(`${i}X${j}=${sum}<br>`);
+        document.write(`${i}X${j}=${i*j}<br>`);
+    }
+</script>
+</body>
+</html>
