@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // prompt 문자를 입력받음(크기비교는 자동으로 숫자로 변환하나 +나 사칙연산은 문자로 입력받아 아래처럼 Number나 parseInt를 사용)
+      var num1 = Number(prompt("첫번째 숫자입력", "0")); // 문자열을 숫자로 변환하여 입력
+      var num2 = parseInt(prompt("두번째 숫자입력", "0")); // Integer.parseInt - 자바에서 사용하는 문법
+
+      //parseInt(10.5px); -> 10 으로 나옴 - 문자열을 정수로 변환 (강력함)
+
+      var result = num1 + num2;
+      document.write(result);
+    </script>
+  </head>
+  <body></body>
+</html>
