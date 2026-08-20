@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- dom 웹페이지를 javascript 가 객체(object) 형태로 다룰수 있도록 만든 모델 -->
+    <!-- Html 을 javaScript로 읽고, 수정, 삭제 ,추가 할 수있게 해주는 기능 -->
+     <!-- dom의 시작은 항상 document 로 시작 -->
+   <h1 id="title">안녕하세요</h1>
+
+    <p class="text">첫 번째 문장</p>
+    <p class="text">두 번째 문장</p>
+
+    <h2>태그선택</h2>
+    <button onclick="hello()">클릭</button>
+    <button id="btn">클릭</button>
+    <img src="images/img1.jpg" alt="이미지1" id="photo">
+
+    <ul id="list">
+         
+    </ul>
+
+
+    <script>
+        console.log(document);
+        // 브라우저의 html전체를 볼 수 있습니다.
+        //1. 요소(Element) - id 선택
+       let title = document.getElementById('title');
+        console.log(title);
+        //2. class 선택
+        let texts = document.getElementsByClassName('text');
+        console.log(texts);
+        //HTMLCollection(2)
+    //3.태그선택
+        let ps = document.getElementsByTagName("h2");
+        console.log(ps);
+        //HTMLCollection(1) - 중복으로 나올수 있으므로
+
+        //가장 많이 쓰이는 방법
+        let title1 = document.querySelector("#title");
+
+        let p1 = document.querySelector(".text"); //두가지 .text 중 첫번째
+         console.log(p1) //첫번째문장 (선택됨)
+
+         let pss = document.querySelectorAll(".text"); //두문단 다 선택할경우
+
+         //사용방법
+         title.innerHTML = "반갑습니다."; //innerHTML title내용변경
+         console.log(title.innerHTML); //title 내용읽기
+
+        //css 변경
+
+        title.style.color  = "red";
+        title.style.backgroundColor = "yellow";
+
+        //속성(Attribute) 변경
+        let photo1 = document.getElementById('photo');
+        photo1.src = "images/img2.jpg";
+
+        //이벤트(event)
+        function hello(){
+            alert("안녕하세요");
+        }
+        //최근 이벤트
+        let btn = document.querySelector("#btn");
+        btn.addEventListener("click",function(){
+            alert("클릭되었어요!!")
+        });
+
+        //요소추가
+        document.createElement("li") // li 요소를 생성
+        li.innerHTML = "사과";
+        document.getElementById("list").appendChild(li);
+
+    </script>
+</body>
+</html>

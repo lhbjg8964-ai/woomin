@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+   <img src="images/img1.jpg" alt="" width="300" id="photo">
+
+   <br>
+    <button onclick="change()">
+       이미지변경
+    </button>
+    <script>
+      //setAttribute()  - 속성지정
+      //getAttribute() - 속성 읽음
+
+        function change(){
+                let img = document.getElementById("photo");
+                console.log(img.getAttribute("src")); //src에 내용을 읽음
+        }
+    </script>
+</body>
+</html>

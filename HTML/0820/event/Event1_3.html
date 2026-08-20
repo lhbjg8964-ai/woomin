@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- addEventListener -->
+
+<form action="">
+    <input type="text" id="txt1">
+    <input type="text" id="txt2">
+</form>
+
+<script>
+    const txt1 = document.getElementById("txt1");
+
+    txt1.addEventListener("input", ()=>{
+        console.log(txt1.value);
+    });
+    //a
+    //ab
+    //abc 식으로 로그에 나옴, 입력시마다 실행
+    const txt2 = document.getElementById("txt1");
+
+    txt2.addEventListener("change", ()=>{
+        console.log(txt2.value);
+    });
+    // change 입력이 끝나고 포커스르 읽을 때 실행
+</script>
+
+</body>
+</html>

@@ -68,7 +68,7 @@ public class ReservationManager {
 
         if(bookSeat(userName, title, seatNumber )){
             int price = movie.getPrice();
-            int discount = (price * discountRate) / 100;
+            int discount = (price * discountRate) /100;
             int finalprice = price - discount;
             System.out.println("예매가 완료되었습니다.");
             System.out.println("원가 : " + price + "원");
@@ -76,14 +76,14 @@ public class ReservationManager {
             System.out.println("할인된 금액 : " + discount + "원");
             System.out.println("결제 금액 : " + finalprice + "원");
 
-            //사용자에게 결제금액 누적
+            //사용자에게 결제 금액 누적
             User user = getUser(userName);
             if(user != null){
                 user.addTotalPaid(finalprice);
             }
 
-        }else{ 
-            System.out.println("이미 예약된 좌석입니다.");
+        }else{
+             System.out.println("이미 예약된 좌석입니다.");
         }
 
 
@@ -107,7 +107,7 @@ public class ReservationManager {
         users.add(user); 
      }
      user.addReservation(title, seatNumber);
-     //유저 예약 추가(영화 제목과 좌석 번호)
+     //유저 예약 추가가(영화 제목과 좌석 번호)
      return true;
     }
 
@@ -115,14 +115,14 @@ public class ReservationManager {
         System.out.print("사용자 이름 입력: ");
         String userName = sc.nextLine();
         User user = getUser(userName);
-        if(user != null && !user.getReservedMovies().isEmpty()){
-            //유저 정보가 존재하고 예약 내역이 있는 경우
+        if(user !=null && !user.getReservedMovies().isEmpty()){
+            //유저정보가 존재하고 예약 내역이 있는 경우
             for (int i = 0; i < user.getReservedMovies().size(); i++) {
                 System.out.println("예매번호: " + user.getReservationNumbers().get(i) +
-                " | 영화: " + user.getReservedMovies().get(i) +
-                " | 좌석: " + user.getReservedSeats().get(i));
+                                   " | 영화: " + user.getReservedMovies().get(i) +
+                                   " | 좌석: " + user.getReservedSeats().get(i));
             }
-            System.out.println("총 결제 금액 : " + user.getTotalPaid() + "원");
+            System.out.println("총 결재 금액 : "+ user.getTotalPaid() + "원");
         }else{
             System.out.println("예약내역이 없습니다.");
         }
@@ -141,21 +141,22 @@ public class ReservationManager {
         //예약목록출력
         System.out.print("취소할 예매 번호를 입력하세요 : ");
         int reservationNumber = sc.nextInt();
-        sc.nextLine();
-        int index = user.getReservationNumbers().indexOf(reservationNumber);
+         sc.nextLine();
+        int index = user.getReservationNumbers().indexOf(reservationNumber); 
         //내용이 같으면 인덱스 번호 다르면 -1
         if(index == -1){
             System.out.println("해당 예매번호의 예약이 없습니다.");
             return;
         }
-        String movieTitle = user.getReservedMovies().get(index);
-        // 영화제목가져오기
-        int seatNumber = user.getReservedSeats().get(index);
-        //좌석번호 가져오기
+       String movieTitle = user.getReservedMovies().get(index);
+       //영화제목가져오기
+         int seatNumber = user.getReservedSeats().get(index);
+        // 좌서번호 가져오기
         Movie movie = getMovie(movieTitle);
-        if (movie != null){
+        if(movie != null){
             movie.getTheater().cancelSeat(seatNumber); //좌석취소
         }
+
 
     }
 
@@ -163,28 +164,68 @@ public class ReservationManager {
         System.out.print("사용자 이름 입력: ");
         String userName = sc.nextLine();
         User user = getUser(userName);
-
-        if (user == null || user.getReservedMovies().isEmpty()){
-            System.out.println(userName + " 님은 예약된 내역이 없습니다.");
+    
+        if (user == null || user.getReservedMovies().isEmpty()) {
+            System.out.println(userName + "님은 예약된 내역이 없습니다.");
             return;
         }
-        //모든 예약 정보
+        //모든 예약 정보 
         ArrayList<String> movies = new ArrayList<>(user.getReservedMovies());
         ArrayList<Integer> seats = new ArrayList<>(user.getReservedSeats());
         ArrayList<Integer> numbers = new ArrayList<>(user.getReservationNumbers());
 
-        for (int i =0; i < movies.size(); i++){
-            String movieTitle = movies.get(i);
+        for(int i = 0; i < movies.size(); i++){
+            String movieTitle =  movies.get(i);
             int seatNumber = seats.get(i);
             int reservationNumber = numbers.get(i);
             Movie movie = getMovie(movieTitle);
-            if (movie !=null) {
+            if(movie !=null ){
                 movie.getTheater().cancelSeat(seatNumber);
-                System.out.println("[" + reservationNumber + "] 영화 [" + movieTitle + "] 좌석 [" + seatNumber + "] 취소됨.");
+                 System.out.println("[" + reservationNumber + "] 영화 [" + movieTitle + "] 좌석 [" + seatNumber + "] 취소됨.");
             }
         }
-        // 사용자 예약 전체 삭제
+        //사용자ㅏ 예약 전체 삭제
         user.clearReservation();
-        System.out.println("\n" + userName + "님의 모든 예약이 취소되었습니다.");
+        System.out.println("\n"+userName + "님의 모든 예약이 취소되었습니다.");
     }
+
+    public void printTicket() {
+       System.out.println("\n=== 티켓 출력===");
+       System.out.println("예매 번호를 입력하세요 : ");
+       int reservationNum = -1; //예매번호 초기화
+       try {
+        reservationNum = Integer.parseInt(sc.nextLine());
+       } catch (Exception e) {
+        System.out.println("숫자를 입력하세요");
+       }
+
+       if(reservationNum != -1){
+            //ticket 객체 null 이면 생성
+            if(ticket == null){
+                ticket = new Ticket(this);
+                //this 는 현재 ReservtionManager객체
+            }
+            ticket.printTicket(reservationNum);
+
+       }
+
+
+
+    }
+
+    public String getReservationDetails(int reservationNum) {
+       for(User user : users){ // user 리스트에 모든 회원을 하나씩 확인
+            if(user.getReservationNumbers().contains(reservationNum)){ //예매번호가 존재 
+               int index = user.getReservationNumbers().indexOf(reservationNum); //인덱스번호 가져오기
+                return "예매번호: " + user.getReservationNumbers().get(index) +
+                                   " | 영화: " + user.getReservedMovies().get(index) +
+                                   " | 좌석: " + user.getReservedSeats().get(index);
+            }
+       }
+
+       return null;
+
+    }
+    
+
 }

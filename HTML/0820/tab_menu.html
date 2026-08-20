@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>탭 메뉴</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 800px;
+        margin: 20px auto;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .tab-buttons {
+        display: flex;
+        border-bottom: 2px solid #eee;
+      }
+
+      .tab-buttons button {
+        margin: 0 2px;
+        padding: 14px 25px;
+        border: none;
+        background-color: #f5f6f7;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px 5px 0 0;
+        transition: background-color 0.3s;
+      }
+
+      .tab-buttons button.active {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .tab-content {
+        display: none;
+        min-height: 263px;
+        margin-top: 20px;
+        padding: 40px 30px;
+        border: 2px solid #d5d5d5;
+        border-radius: 5px;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .tab-content h2 {
+        margin: 10px 0 25px;
+        font-size: 25px;
+      }
+
+      .tab-content p {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>탭 메뉴</h1>
+
+      <div class="tab-buttons">
+        <button class="tab-link active" data-tab="home">홈</button>
+        <button class="tab-link" data-tab="about">소개</button>
+        <button class="tab-link" data-tab="contact">연락처</button>
+      </div>
+
+      <div id="home" class="tab-content active">
+        <h2>홈</h2>
+        <p>홈 페이지 내용입니다. 여기에 메인 콘텐츠를 작성할 수 있습니다.</p>
+      </div>
+
+      <div id="about" class="tab-content">
+        <h2>소개</h2>
+        <p>
+          소개 페이지 내용입니다. 회사나 개인에 대한 정보를 작성할 수 있습니다.
+        </p>
+      </div>
+
+      <div id="contact" class="tab-content">
+        <h2>연락처</h2>
+        <p>연락처 페이지 내용입니다. 연락 방법을 안내할 수 있습니다.</p>
+      </div>
+    </div>
+
+    <script>
+      const tabLinks = document.querySelectorAll(".tab-link");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabLinks.forEach(function (button) {
+        button.addEventListener("click", function () {
+          const targetId = button.getAttribute("data-tab");
+
+          tabLinks.forEach(function (btn) {
+            btn.classList.remove("active");
+          });
+
+          tabContents.forEach(function (content) {
+            content.classList.remove("active");
+          });
+
+          button.classList.add("active");
+
+          document.getElementById(targetId).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
