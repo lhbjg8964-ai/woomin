@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+    //재선언과 재할당이 가능하다. - var
+        var num1 = 20;
+        num1 = 30; //변수의 값이 변경된다.
+        document.write(num1+'<br/>');
+        
+        var num2 = 20;
+        var num2 = 30;
+        document.write(num2+'<br/>'); 
+    
+        //재할당 가능 재선언 불가능 
+        let num3 = 20;
+        num3 = 30;
+        document.write(num3+'<br/>');
+        let num4 = 20;
+        //let num4 = 30; 같은 변수명으로 중복 선언이 안된다.
+
+        //재선언 재할당 불가능 - 상수취급
+        const num5 = 5;
+        // num5 = 40; 자바 fianl 상수 - 변경안됨(재할당 안됨)
+        document.write("num5="+num5);
+
+         const num6 = 20;
+         //const num6 = 30; 중복 선언이 안된다.
+        document.write(num3+'<br/>'); 
+
+
+</script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

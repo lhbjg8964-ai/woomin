@@ -11,9 +11,6 @@ public class Student {
         this.eng = eng;
         this.math = math;
     }
-    public Student(String i, String string, int j) {
-        //TODO Auto-generated constructor stub
-    }
     @Override
     public String toString() {
         return "Student [name=" + name + ", kor=" + kor + ", eng=" + eng + ", math=" + math + "]";
@@ -29,10 +26,6 @@ public class Student {
     }
     public int getMath() {
         return math;
-    }
-    public static Student fromString(String line) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'fromString'");
     }
     
     

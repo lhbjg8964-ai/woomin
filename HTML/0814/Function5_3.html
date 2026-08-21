@@ -7,17 +7,18 @@
 </head>
 <body>
     <script>
-        var str; //전역변수
-        var num = '바람';//전역변수
-        function lover(){
-            str = '산';
-            var sum = '강'; //지역변수
-            document.write('함수내에서 출력 ', str, '</br>');//산
-            document.write('함수내에서 출력 ', sum, '</br>');//강
-        }
-        lover();
-        document.write(str,'</br>')//산
-        document.write(sum,'</br>')//바람
-    </script>
+     var str; //전역변수
+     var sum='바람';//전역변수
+     function lover(){
+        str = '산';
+        var sum = "강";// 지역변수
+          document.write('함수내에서 출력 ', str,'<br>'); //산
+          document.write('함수내에서 출력 ', sum,'<br>'); //강
+     }
+     lover();
+       document.write(str,'<br>');//산
+       document.write(sum,'<br>');//바람
+</script>
+ 
 </body>
 </html>

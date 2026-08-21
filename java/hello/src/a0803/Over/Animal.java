@@ -1,4 +1,4 @@
-package a0803.Over;
+package a0803.over;
 
  class Animal {
     String name;

@@ -1,0 +1,50 @@
+*{margin: 0; padding: 0;}
+
+#slide-container{
+    position: relative;
+    width: 100%;
+    max-width: 795px;
+    height: 450px;
+    margin: 100px auto 0;
+}
+.slider{
+    width: 100%;
+}
+.slide{ /*3장의 사진을 겹침*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.slide.on{
+    visibility: visible;
+    opacity: 1;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.pager{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+/* dot에 넓이 높이를 주려고 display: inline-block;을 함*/
+.dot{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition:  background-color 0.6s ease;
+    cursor: pointer;
+}
+.dot.active{background-color: red;}
+.dot:hover{
+    background-color: #717171;
+}

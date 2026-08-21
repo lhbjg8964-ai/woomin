@@ -1,6 +1,6 @@
 package a0722;
 
-public class Assignment {
+public class AssignMent {
     public static void main(String[] args) {
         System.out.println("===기본 대입 연산자===");
         int a = 10;

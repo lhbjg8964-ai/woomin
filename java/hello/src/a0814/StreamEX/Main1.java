@@ -1,4 +1,4 @@
-package a0814.StreamEX;
+package a0814.streamEx;
 
 import java.util.Arrays;
 import java.util.Comparator;

@@ -1,5 +1,7 @@
 package a0731.account1;
 
+import a0731.account2.Account;
+
 // 하나의 .java 파일에는 public 클래스를 하나만 만들 수 있다.
 public class AccountTest {
     public static void main(String[] args) {

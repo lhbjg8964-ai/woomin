@@ -1,0 +1,46 @@
+package a0821.직원관리_crud;
+
+public class Employee {
+    private String id; // E001
+    private String name; // 이름
+    private String dept; // 부서
+    private int salary; // 연봉
+
+    public String getId() {
+        return id;
+    }
+    // public void setId(String id) { 수정 불가 때문에 지움
+    //     this.id = id;
+    // }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getDept() {
+        return dept;
+    }
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
+    public int getSalary() {
+        return salary;
+    }
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+    public Employee(String id, String name, String dept, int salary) {
+        this.id = id;
+        this.name = name;
+        this.dept = dept;
+        this.salary = salary;
+    }
+    @Override
+    public String toString() {
+        return "사번 : " + id + " | 이름 : " + name + " | 부서 : " + dept + " | 연봉 : " + salary + "만원" ;
+    }
+    
+    
+    
+}

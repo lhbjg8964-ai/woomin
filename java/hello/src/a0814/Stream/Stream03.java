@@ -1,4 +1,4 @@
-package a0814.Stream;
+package a0814.stream;
 
 import java.util.Arrays;
 import java.util.List;

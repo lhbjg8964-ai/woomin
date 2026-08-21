@@ -1,174 +1,108 @@
 package a0811.movie;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MovieManager {
 
-    // 전체 영화 목록
-    private ArrayList<Movie> movies = new ArrayList<>();
+    private ArrayList<Movie> movies;
+    private ArrayList<Movie> rentedList;
 
-    // 대여한 영화 목록
-    private ArrayList<Movie> rentedList = new ArrayList<>();
-
-    // 생성자
     public MovieManager() {
-
-        // 더미 데이터 3개
-        this.movies.add(new Movie("Inception", "Nolan", "SF", "12"));
-        this.movies.add(new Movie("Parasite", "Bong", "Drama", "15"));
-        this.movies.add(new Movie("Toy Story", "Lasseter", "Animation", "All"));
+        movies = new ArrayList<>();
+        rentedList = new ArrayList<>();
+        movies.add(new Movie("Inception", "Nolan", "SF", "12"));
+        movies.add(new Movie("Parasite", "Bong", "Drama", "15"));
+        movies.add(new Movie("Toy Story", "Lasseter", "Animation", "All"));
     }
 
-    // 1. 대여 가능한 영화 보기
     public void showAvailableMovies() {
-
-        boolean found = false;
-
+        System.out.println("대여 가능한 영화");
         for (Movie movie : movies) {
-
             if (movie.isAvailable()) {
                 System.out.println(movie);
-                found = true;
             }
-        }
-
-        if (!found) {
-            System.out.println("대여 가능한 영화가 없습니다.");
         }
     }
 
-    // 2. 영화 대여하기
     public boolean rent(String title) {
-
         for (Movie movie : movies) {
-
-            // 영화 제목을 대소문자 구분 없이 비교
-            if (movie.getTitle().equalsIgnoreCase(title)) {
-
-                // 대여 가능한 상태라면
-                if (movie.isAvailable()) {
-
-                    // 대여 불가능 상태로 변경
-                    movie.setAvailable(false);
-
-                    // 대여 목록에 추가
-                    rentedList.add(movie);
-
-                    return true;
-                }
+            if (movie.getTitle().equalsIgnoreCase(title) && movie.isAvailable()) {
+                movie.rent();
+                rentedList.add(movie);
+                return true;
             }
         }
-
         return false;
     }
 
-    // 3. 대여한 영화 보기
-    // rent(String title)과 이름은 같지만 매개변수가 다름
-    // 메서드 오버로딩
     public void rent() {
-
-        if (rentedList.isEmpty()) {
-            System.out.println("대여한 영화가 없습니다.");
-            return;
-        }
-
         for (Movie movie : rentedList) {
             System.out.println(movie);
         }
     }
 
-    // 4. 영화 추가하기
-    public void addMovie(
-            String title,
-            String director,
-            String genre,
-            String rating) {
-
-        Movie movie = new Movie(
-                title,
-                director,
-                genre,
-                rating
-        );
-
-        this.movies.add(movie);
+    public void addMovie(String title, String director, String genre, String rating) {
+        movies.add(new Movie(title, director, genre, rating));
     }
 
-    // 5. 영화 삭제하기
-    public boolean deleteMovie(String title) {
-
-        for (int i = 0; i < movies.size(); i++) {
-
-            Movie movie = movies.get(i);
-
+    public void deleteMovie(String title) {
+        boolean result = false;
+        for (Movie movie : movies) {
             if (movie.getTitle().equalsIgnoreCase(title)) {
-
-                // 대여 중이면 삭제 불가능
-                if (!movie.isAvailable()) {
-                    return false;
+                if (movie.isAvailable()) {
+                    movies.remove(movie);
+                    result = true;
                 }
-
-                movies.remove(i);
-
-                return true;
+                break;
             }
         }
-
-        return false;
+        System.out.println(result ? "삭제됨" : "삭제안됨");
     }
 
-    // 6. 영화 정보 수정하기
-    public boolean updateMovie(
-            String title,
-            int choice,
-            String value) {
-
+    public void updateMovie(String title) {
+        Scanner sc = new Scanner(System.in);
+        boolean found = false;
         for (Movie movie : movies) {
-
             if (movie.getTitle().equalsIgnoreCase(title)) {
-
-                switch (choice) {
-
+                System.out.print("수정 항목\n1. 제목\t2. 감독\t3. 장르\t4. 등급\n >>");
+                int menu = sc.nextInt();
+                sc.nextLine();
+                switch (menu) {
                     case 1:
-                        movie.setTitle(value);
+                        System.out.print("수정할 제목: ");
+                        movie.setTitle(sc.nextLine());
                         break;
-
                     case 2:
-                        movie.setDirector(value);
+                        System.out.print("수정할 감독: ");
+                        movie.setDirector(sc.nextLine());
                         break;
-
                     case 3:
-                        movie.setGenre(value);
+                        System.out.print("수정할 장르: ");
+                        movie.setGenre(sc.nextLine());
                         break;
-
                     case 4:
-                        movie.setRating(value);
+                        System.out.print("수정할 등급: ");
+                        movie.setRating(sc.nextLine());
                         break;
-
                     default:
-                        return false;
+                        System.out.println("1~4번 중에 입력하세요");
+                        return;
                 }
-
-                return true;
+                found = true;
+                break;
             }
         }
-
-        return false;
+        if (!found) {
+            System.out.println("찾는 영화가 없어서 수정할 수 없습니다.");
+        }
     }
 
-    // 7. 영화 내용 보기
-    public void searchMovie(String title) {
-
+    public void showMovie(String title) {
         for (Movie movie : movies) {
-
             if (movie.getTitle().equalsIgnoreCase(title)) {
-
                 System.out.println(movie);
-
-                return;
             }
         }
-
-        System.out.println("해당 영화를 찾을 수 없습니다.");
     }
 }

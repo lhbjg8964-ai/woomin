@@ -1,4 +1,4 @@
-package a0818.Movie;
+package a0818.movie;
 
 import java.util.ArrayList;
 
@@ -10,20 +10,21 @@ public class Theater {
 
     public Theater(int seatCount) {
         seats = new ArrayList<>(); //seats 초기화
-        for(int i = 0; i < seatCount; i++){
-            seats.add((i+1)+""); //문자로 저장 ("")
-            // 초기 좌석 번호 저장
-            // 예 5개면 "1", "2", "3", "4", "5"
+        for(int i = 0 ; i < seatCount; i++){
+            seats.add((i+1) + ""); //문자로 저장("")
+            //초기 좌석 번호 저장
+            //예 5개면 "1","2","3","4","5"
         }
     }
+
     public void displaySeats(){
         System.out.println("\n 좌석 배치 (예약된좌석: X)");
-        for(int i = 0; i <seats.size(); i++){
+        for(int i = 0;i <seats.size();i++){
             System.out.printf("%2s ", seats.get(i));
-            // 좌석 번호 또는 "X" 출력
-            if((i+1) % 10 == 0) System.out.println(); // 10개가 채워지면 줄바꿈
-            // 모든 좌석번호 출력
-        }
+            //좌석 번호 또는 "X" 출력
+            if((i+1) % 10 ==0) System.out.println(); //10개가 채워지면 줄바꿈
+            //모든 좌석번호 출력
+       }
     }
     // TODO: 
     // 1. seatNumber가 유효한 범위인지 확인 (1 ~ seats.size())
@@ -33,25 +34,32 @@ public class Theater {
     // 주의: 인덱스는 0부터 시작하므로 seatNumber - 1 사용
     public boolean reserveSeat(int seatNumber){
         if(seatNumber > 0 && seatNumber <= seats.size() && !seats.get(seatNumber - 1).equals("X")){
-            seats.set(seatNumber - 1, "X");
-            //좌석 예약시 인덱스 번호 해당하는 값을 "X"로 변경
+            seats.set(seatNumber -1, "X");
+            //좌석예약시 인덱스번호 해당하는 값을 "X" 변경
             return true;
         }
         return false;
     }
+
     public int getAvailableSeats(){
         int count = 0;
         for(String seat : seats){
             if(!seat.equals("X")) count++;
-            // 예약되지 않은 좌석 수 카운트
+            //예약되지 않은 좌석 수 카운트
         }
         return count;
-        // "X"가 아닌 좌석의 개수를 세어서 반환
+        // "X"가 아닌 좌석의 개수를 세어서 반환 
     }
+
     public void cancelSeat(int seatNumber) {
-        if(seatNumber > 0 && seatNumber <= seats.size() && seats.get(seatNumber - 1 ).equals("X")){
-            seats.set(seatNumber - 1 ,  String.valueOf(seatNumber)); //seatNumber를 문자로 변환해서 저장
-            // 예약 취소시 원래 좌석번호로 변경
+        if(seatNumber > 0 && seatNumber <= seats.size() && seats.get(seatNumber -1 ).equals("X")){
+            seats.set(seatNumber-1,  String.valueOf(seatNumber)); //seatNumber 를 문자로 변경저장
+            //예약취소시 원래 좌석 변호로 변경
         }
+
     }
+
+
+    
+
 }

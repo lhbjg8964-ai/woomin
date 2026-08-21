@@ -19,7 +19,9 @@
 
         function change(){
                 let img = document.getElementById("photo");
-                console.log(img.getAttribute("src")); //src에 내용을 읽음
+                console.log(img.getAttribute("src")); //src 에 내용을 읽음
+                img.setAttribute("src", "images/img3.jpg"); // src 에 img3.jpg를 지정
+                console.log(img.getAttribute("src"));
         }
     </script>
 </body>

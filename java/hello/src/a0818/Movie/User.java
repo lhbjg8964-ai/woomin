@@ -1,4 +1,4 @@
-package a0818.Movie;
+package a0818.movie;
 
 import java.util.ArrayList;
 
@@ -40,40 +40,49 @@ public class User {
     }
     
     public void addReservation(String title, int seatNumber){
-        // TODO: 
-        // 1. reservedMovies에 title 추가
+          // TODO: 
+        // 1. reservedMovies에 movieTitle 추가
         // 2. reservedSeats에 seatNumber 추가
-        // 3. reservationCounter를 사용하여 예매번호 부여 (나중에 추가)
-        reservedMovies.add(title);
+        // 3.
+        //  reservationCounter를 사용하여 예매번호 부여 (나중에 추가)
+        reservedMovies.add(title); 
         //예매한 영화 제목저장
         reservedSeats.add(seatNumber);
         //예매한 좌석 번호 저장
         reservationNumbers.add(reservationCounter++);
         //예매번호 부여후 증가
-
     }
-    public void addTotalPaid(int amount) { //금액누적
-        totalPaid += amount;
+    public void addTotalPaid(int amount) { //금액 누적
+       totalPaid += amount;
     }
     public void showReservations() {
-        System.out.println("\n예약 내역");
+       System.out.println("\n예약 내역");
          for (int i = 0; i < reservedMovies.size(); i++) {
                 System.out.println("예매번호: " + reservationNumbers.get(i) +
-                " | 영화: " + reservedMovies.get(i) +
-                " | 좌석: " + reservedSeats.get(i));
+                                   " | 영화: " + reservedMovies.get(i) +
+                                   " | 좌석: " + reservedSeats.get(i));
             }
     }
-    public void clearReservation() {
-        // 예약 내역 초기화
-
-        reservedMovies.clear(); // list 안에있는 내용 전부 삭제
+    public void clearReservations() {
+        //예약 내역 초기화
+        reservedMovies.clear(); //list안에 있는 내용전부 삭제
         // 예매한 영화 제목 초기화
-
         reservedSeats.clear();
-        // 예매한 좌석번호 초기화
-        
+        // 예매한 좌석 번호 초기화
         reservationNumbers.clear();
         // 예매번호 초기화
     }
+    public void removeReservationsBymovie(String title) {
+        for(int i = reservedMovies.size()-1;i>=0;i--){
+            if(reservedMovies.get(i).equals(title)){
+                reservedMovies.remove(i);
+                reservedSeats.remove(i);
+                reservationNumbers.remove(i);
+            }
+       }
+       
+        // reservedMovies.removeIf(movie -> movie.equals(title)); 가장깔끔
+    }
+
     
 }

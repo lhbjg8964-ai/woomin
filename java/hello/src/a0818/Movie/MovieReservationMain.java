@@ -1,4 +1,4 @@
-package a0818.Movie;
+package a0818.movie;
 
 import java.util.Scanner;
 
@@ -8,6 +8,7 @@ public class MovieReservationMain {
         ReservationManager manager = new ReservationManager();
         Ticket ticket = new Ticket(manager); //티켓 객체생성
 
+        
         //영화 추가
         manager.addMovie(new Movie("Inception", "18:00", 12000, 50));
         manager.addMovie(new Movie("Interstellar", "20:30", 15000, 50));
@@ -20,8 +21,7 @@ public class MovieReservationMain {
             System.out.println("0. 종료");
             System.out.print("선택: ");
             String choice = sc.nextLine();
-
-
+            
              switch (choice) {
                 case "1":
                     userMenu(manager, sc);
@@ -39,8 +39,16 @@ public class MovieReservationMain {
 
     }
 
-    private static void adminLogin(ReservationManager manager, Ticket ticket, Scanner sc) {
-         System.out.println("\n=== 운영자 메뉴 ===");
+    private static void adminLogin(ReservationManager reservationManager, Ticket ticket, Scanner sc) {
+       System.out.println("운영자 비밀번호를 입력하세요 : ");
+       String password = sc.nextLine();
+       //예시
+       if(!password.equals("admin123")){
+            System.out.println("비밀번호가 틀렸습니다.");
+            return;
+       } 
+       while(true){
+            System.out.println("\n=== 운영자 메뉴 ===");
             System.out.println("1. 영화 삭제");
             System.out.println("2. 상영 영화 갱신");
             System.out.println("3. 영화 정보 수정");
@@ -48,13 +56,13 @@ public class MovieReservationMain {
             System.out.println("0. 뒤로가기");
             System.out.print("선택: ");
             String choice = sc.nextLine();
-
-            case "1":
+            switch (choice) {
+                 case "1":
                     reservationManager.showMovies();
                     reservationManager.deleteMovie(sc);    
                     break;
                 case "2":
-                    ticket.updateMovieList();
+                    ticket.updateMovieList(); // 영화 리스트를 읽어옴 
                     System.out.println("영화 목록이 갱신되었습니다.");
                     break;
                 case "3":
@@ -68,6 +76,10 @@ public class MovieReservationMain {
                     return;        
                 default:
                     break;
+            }
+       }
+
+
     }
 
     private static void userMenu(ReservationManager manager, Scanner sc) {
@@ -105,12 +117,11 @@ public class MovieReservationMain {
                     manager.printTicket();
                     break;
                 case 0:                   
-                    break End;  // End를 빠져나간다             
+                    break End;  //End 를 빠져나간다.                      
                 default:
                     System.out.println("잘못된 입력입니다. 다시 선택해주세요.");
             }
 
        }
     }
-    
 }

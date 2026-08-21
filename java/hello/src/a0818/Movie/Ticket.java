@@ -1,8 +1,12 @@
-package a0818.Movie;
+package a0818.movie;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Ticket
@@ -19,6 +23,7 @@ public class Ticket {
         this.reservationManager = reservationManager;
     }
 
+    //영화 예매 티켓
     public void printTicket(int reservationNum) {
         try {
             File dir = new File("d:\\movieTicker");
@@ -52,6 +57,51 @@ public class Ticket {
         } catch (Exception e) {
             System.out.println("티켓 출력 실패 : " + e.getMessage());
         }
+    }
+
+    public void updateMovieList() {
+       File file = new File("d:\\movieTicker\\movieList.txt");
+
+       if(!file.exists()){
+         System.out.println("movieList.txt 파일이 존재하지 않습니다.");
+            return;
+       } 
+       try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"))) {
+            String line;
+            System.out.println("======================================");
+        
+            while ((line = bufferedReader.readLine())  != null) {
+                line = line.trim();
+                if (line.isEmpty()) continue; //빈줄일때는 돌아감(위로올라감)
+
+                String[] movies= line.split("/"); // '/' 배열기준으로 배열을 만듬
+                if(movies.length != 4){
+                    System.out.println("잘못된 형식의 영화 정보 : " + line );
+                }
+             try {
+                    String title = movies[0];//영화제목
+                    String genre = movies[1];//상영시간
+                    int rows = Integer.parseInt(movies[2]);//가격
+                    int totalSeats = Integer.parseInt(movies[3]);//총좌석
+                    //중복영화확인
+                     if (reservationManager.getMovie(title) != null) {
+                        System.out.println("중복된 영화 [" + title + "] 은(는) 추가되지 않습니다.");
+                        continue;
+                    }
+                    Movie movie = new Movie(title, genre, rows, totalSeats);
+                    reservationManager.addMovie(movie);
+                    System.out.println("영화 추가됨: "+ movie.getTitle());
+                } catch (NumberFormatException e) {
+                    System.out.println("좌석 수 또는 행 수가 잘못된 숫자입니다." + line);
+                }
+
+
+            }
+
+       } catch (IOException e) {
+        System.out.println("파일 읽기 오류" + e.getMessage());
+       }
+
     }
 
    

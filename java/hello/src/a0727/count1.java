@@ -1,6 +1,6 @@
 package a0727;
 
-public class count1 {
+public class Count1 {
     public static void main(String[] args) {
         //80점 이상인 학생수 구하시오
         int[] score = {90,85,70,100,95};

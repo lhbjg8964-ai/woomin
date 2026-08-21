@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<style>
+#box{
+    background-color: white;
+    width: 150px;height:150px;
+    border: 1px solid #000;
+}
+#box.active{background-color: yellowgreen;}
+#box1{
+    background-color: white;
+    width: 150px;height:150px;
+    border: 1px solid #000;
+}
+#box1.active{background-color: pink;}
+
+</style>
+
 </head>
 <body>
     <!-- dom 웹페이지를 javascript 가 객체(object) 형태로 다룰수 있도록 만든 모델 -->
@@ -20,10 +36,13 @@
     <img src="images/img1.jpg" alt="이미지1" id="photo">
 
     <ul id="list">
-         
+
     </ul>
-
-
+    <br>
+    <button id ="btn2"> 배경변경 </button>
+    <div id="box">박스</div>
+     <button id ="btn3"> 배경토글 </button>
+    <div id="box1">박스1</div>
     <script>
         console.log(document);
         // 브라우저의 html전체를 볼 수 있습니다.
@@ -71,9 +90,34 @@
         });
 
         //요소추가
-        document.createElement("li") // li 요소를 생성
-        li.innerHTML = "사과";
+        let li = document.createElement("li"); //li 요소를 생성해서 li변수에 넣기 
+        li.innerHTML ="사과"; //li 사과 내용추가
         document.getElementById("list").appendChild(li);
+
+        //요소삭제
+        let li1 = document.querySelector("li");
+        li1.remove();
+
+        //클래스 추가
+        // 클래스 포함되있는 알려면 contains 물어봄
+        let box = document.querySelector("#box");
+        let btn2= document.querySelector("#btn2");
+
+        btn2.addEventListener('click',function(){//색상변경 btn2 클릭하면
+            if(box.classList.contains("active")){ //active 클래스가 있으면
+                box.classList.remove("active"); //active class 삭제
+            }else{//없으면
+                box.classList.add("active"); //active class 삽입 - css 배경 yellowgreen 적용
+            }
+        });
+
+        let box1 = document.querySelector("#box1");
+        let btn3= document.querySelector("#btn3");
+
+        btn3.addEventListener('click',function(){//색상변경 btn2 클릭하면
+           box1.classList.toggle('active'); //토글
+        });
+
 
     </script>
 </body>

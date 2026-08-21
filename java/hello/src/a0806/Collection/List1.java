@@ -29,25 +29,24 @@ public class List1 {
         
         // 요소 삭제 (인덱스)
         arrayList.remove(1);
-        System.out.println("인덱스 1 삭제: " + arrayList);//딸기 바나나 오렌지
+        System.out.println("인덱스 1 삭제: " + arrayList); //딸기 바나나 오렌지
         
         // 요소 삭제 (요소)
         arrayList.remove("바나나");
-        System.out.println("바나나 삭제: " + arrayList); //딸기 오렌지
+        System.out.println("바나나 삭제: " + arrayList);
         
         // 크기 확인
         System.out.println("리스트 크기: " + arrayList.size());
 
+
         // 포함 여부 확인
-        System.out.println("오렌지 포함 여부 : "+ arrayList.contains("오렌지"));
+        System.out.println("오렌지 포함 여부: " + arrayList.contains("오렌지"));
         // 포함이면 true 없으면 false
-
-        // 인덱스 찾기
-        System.out.println("오렌지 포함 여부 : "+ arrayList.indexOf("오렌지"));
-        // 찾으면 인덱스 번호를 반환 없으면 -1(음수)
         
-
-        System.out.println("\n반복문으로 순회:");
+        // 인덱스 찾기
+        System.out.println("오렌지의 인덱스: " + arrayList.indexOf("오렌지"));
+        //찾으면 인덱스번호를 반환 1 찾지못하면 -1
+         System.out.println("\n반복문으로 순회:");
         for (String fruit : arrayList) {
             System.out.println("- " + fruit);
         }
@@ -57,5 +56,6 @@ public class List1 {
         for (int i = 0; i < arrayList.size(); i++) {
             System.out.println(i + ": " + arrayList.get(i));
         }
+        
     }
 }

@@ -51,31 +51,31 @@
    <div id="tab3" class="tab-content">포도는 보라색이고 송이로 열립니다.</div>
 </body>
 </html>
-<script>
+<script> 
     const tabLinks = document.querySelectorAll('.tab-link'); //버튼들
-    const tabContent = document.querySelectorAll('.tab-content'); //내용들
+    const tabContents = document.querySelectorAll('.tab-content'); //내용들
 
     tabLinks.forEach(function(button){
         button.addEventListener('click',function(){
-            const targetId = button.getAttribute("data-tab"); //tab1, tab2, tab3
-            // alert(targetId);
+           const targetId =  button.getAttribute("data-tab"); //tab1 , tab2, tab3
+           //alert(targetId);
 
-            // 모든 버튼을 비활성화
-        //     tabLinks.forEach(function(btn){ //버튼을  순회하면서 클래스 active 제거
-        //         btn.classList.remove('active')
-        //     })
-        // })
+           //모든버튼을 비활성화
+            //tabLinks.forEach(function(btn){ //버튼을 순회하면서  클래스 active
+          //      btn.classList.remove('active');
+          //  });
 
-            tabLinks.forEach( btn => btn.classList.remove('active'));
-            // 현재 클릭한 버튼에 active 클래스 부여
-            button.classList.add('active');
+             tabLinks.forEach( btn =>btn.classList.remove('active'));
+             //현재 클릭한 버튼에  active 클래스 부여
+             button.classList.add('active');
 
-            // tabContent (내용) active 제거 - 내용숨기기
-            tabContent.forEach( btn => btn.classList.remove('active'));
-            // 내용 활성화
-            document.getElementById(targetId).classList.add('active');
+             //tabContent(내용) active제거 - 내용숨기기
+            tabContents.forEach( content =>content.classList.remove('active'));
+             //내용활성화
+            document.getElementById(targetId).classList.add('active') ;
 
-        })
+        });
 
-    })
+    });
+
 </script>

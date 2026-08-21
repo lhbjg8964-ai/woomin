@@ -7,31 +7,31 @@
 </head>
 <body>
     <script>
-        let fruits = ["사과","바나나","오렌지"]; //배열 생성
+        let fruits = ["사과", "바나나", "오렌지"]; //배열 생성
 
         console.log(fruits);
-        console.log(fruits[0]); // 인덱스로 접근
+        console.log(fruits[0]); //인덱스로 접근
         console.log(fruits[1]);
         console.log(fruits[2]);
 
-        console.log(fruits.length);
-        fruits[1] = "포도"; //값 변경
-        console.log(fruits)
+       console.log(fruits.length);
+       fruits[1] = "포도"; //값변경
+       console.log(fruits);
 
-        //마지막에 추가 push
-        fruits.push("딸기");
-        console.log(fruits);
+       //마지막에 추가 push
+       fruits.push("딸기");
+       console.log(fruits);
 
-        //마지막 삭제 pop
-        let item = fruits.pop();
+       //마지막 삭제 pop
+       let item = fruits.pop();
 
         console.log(item);
         console.log(fruits);
 
-        //맨 앞 추가(unshift)
-        console.log("올리브 추가");        
+        //맨앞 추가(unshift)
+          console.log("올리브추가");
         fruits.unshift("올리브");
-        console.log("unshift 후");
+         console.log("unshift 후");
         console.log(fruits);
 
         //맨 앞 삭제(shift)
@@ -41,23 +41,25 @@
         console.log("shift 후");
         console.log(fruits);
 
-        //for ... of (Java enhance for 문과 유사)
+        //for ... of (java enhance for문과 유사)
         console.log("for .. of")
 
         for(let fruit of fruits){
 
-            console.log(fruit)
+            console.log(fruit);
+
         }
 
         //forEach 1
         console.log("forEach 1")
-        fruits.forEach(function(item){
+        fruits.forEach(function(item){ 
             console.log(item);
         });
 
+
         //forEach 2
         console.log("forEach 2")
-        fruits.forEach(item => console.log(item));
+        fruits.forEach(item => console.log(item))
     </script>
 </body>
 </html>

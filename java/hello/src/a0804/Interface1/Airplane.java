@@ -1,6 +1,6 @@
-package a0804.Interface1;
+package a0804.interface1;
 
-public class Airplane implements Flayable {
+public class AirPlane implements Flayable {
 
     @Override
     public void fly() {

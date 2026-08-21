@@ -1,4 +1,4 @@
-package a0803.Book;
+package a0803.book;
 
 public class LibraryEx {
     public static void main(String[] args) {

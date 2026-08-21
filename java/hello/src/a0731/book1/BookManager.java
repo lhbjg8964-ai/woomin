@@ -2,6 +2,8 @@ package a0731.book1;
 
 import java.util.Scanner;
 
+import a0729.static1;
+
 public class BookManager {
     //최대 100권의 도서를 저장할 수 잇는 배열과 카운터 변수
     static Book[] bookList = new Book[100];

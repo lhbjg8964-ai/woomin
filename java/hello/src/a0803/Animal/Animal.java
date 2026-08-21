@@ -1,4 +1,4 @@
-package a0803.Animal;
+package a0803.animal;
 
 public class Animal {
     String name;

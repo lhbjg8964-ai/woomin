@@ -1,4 +1,4 @@
-package a0803.Book;
+package a0803.book;
 
 public class PrintBook extends Book {
     private int pageCount; //추가된필드 : 페이스수 

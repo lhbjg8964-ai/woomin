@@ -6,29 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-<!-- addEventListener -->
-
-<form action="">
+<!-- addEventListener() -->
+ <form action="">
     <input type="text" id="txt1">
     <input type="text" id="txt2">
-</form>
+ </form>
 
 <script>
     const txt1 = document.getElementById("txt1");
 
-    txt1.addEventListener("input", ()=>{
-        console.log(txt1.value);
+    txt1.addEventListener("input", () => {
+      console.log(txt1.value);
     });
     //a
     //ab
-    //abc 식으로 로그에 나옴, 입력시마다 실행
-    const txt2 = document.getElementById("txt1");
+    //abc
+    //input 입력할 때마다 실행
+    const txt2 = document.getElementById("txt2");
 
-    txt2.addEventListener("change", ()=>{
-        console.log(txt2.value);
+    txt2.addEventListener("change", () => {
+      console.log(txt2.value);
     });
-    // change 입력이 끝나고 포커스르 읽을 때 실행
-</script>
+    //change 입력이 끝나고 포커스를 읽을 때 실행
 
+
+</script>
 </body>
 </html>

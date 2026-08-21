@@ -1,38 +1,59 @@
 package a0806.Collection;
+
 import java.util.*;
+
+
+//컬렉션 프레임워크(collection) - 다수의 데이터를 쉽고 효과적으로 처리 클래스의 집합
+// List
+// Set
+// Map
 
 public class List_1 {
     public static void main(String[] args) {
-        // LinkdeList 생성
-        LinkedList<String> linkedList = new LinkedList<>();
+        ArrayList<Integer> arrList = new ArrayList<>();
+		
+        // 제넥릭은 객체를 다룬다. 기본형인 int 허용안됨 ->  <Integer> 
 
-        linkedList.add("첫 번째");
-        linkedList.add("두 번째");
-        linkedList.add("세 번째");
-        System.out.println("초기 리스트:" + linkedList);
+		// add() 메소드를 이용한 요소의 저장
+		arrList.add(40);
+		arrList.add(20);
+		arrList.add(30);
+		arrList.add(10);
+		
+		// for 문과 get() 메소드를 이용한 요소의 출력
+		for (int i = 0; i < arrList.size(); i++) {
+			System.out.print(arrList.get(i) + " ");
+		}
+		System.out.println();
 
-        //앞에 추가
-        linkedList.addFirst("맨 앞");
-        System.out.println("초기 리스트:" + linkedList);
+        arrList.remove(1);
+        //향상 for
+        for(int e : arrList ){
+            System.out.print(e + " ");
+        }
+        System.out.println();
 
-        //뒤에 추가
-        linkedList.addLast("맨 뒤");
-        System.out.println("초기 리스트:" + linkedList);
+	   // Collections.sort() 메소드를 이용한 요소의 정렬
+		Collections.sort(arrList); // Collections 에서 정렬을 지원
 
-        //첫 번째/마지막 요소
-        System.out.println("첫 번째 요소" + linkedList.getFirst());
-        System.out.println("마지막 요소" + linkedList.getLast());
+        // iterator() 메소드와 get() 메소드를 이용한 요소의 출력
+        //중요하지 않음
+		Iterator<Integer> iter = arrList.iterator();
+		while (iter.hasNext()) {
+			System.out.print(iter.next() + " ");
+		}
+		System.out.println();
 
-        linkedList.add(1,"중간 번째");
-        System.out.println("리스트" + linkedList);
 
-        
-        linkedList.remove(3);
-        System.out.println("리스트" + linkedList);
+		// set() 메소드를 이용한 요소의 변경
+		arrList.set(0, 20);
+        for(int e : arrList ){
+            System.out.print(e + " ");
+        }
+        System.out.println();
+        //크기확인
+        System.out.println("리스트의 크기 : " + arrList.size());
 
-        System.out.println("\n=== ArrayList vs LinkedList ===");
-        System.out.println("ArrayList: 인덱스 접근이 빠름, 중간 삽입/삭제가 느림");
-        System.out.println("LinkedList: 중간 삽입/삭제가 빠름, 인덱스 접근이 느림");
+
     }
-    
 }

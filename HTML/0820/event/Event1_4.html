@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-<!-- addEventListener -->
 
 <form id="frm">
     <input type="text">
@@ -16,14 +15,12 @@
 <script>
     const frm = document.getElementById("frm");
 
-    frm.addEventListener("submit",(e)=>{
-        e.preventDefault(); // 원래의 폼 전송 막을 수 있다.
+        frm.addEventListener("submit",(e)=>{
+            e.preventDefault(); //원래의 폼 전송 막을수 있다.
 
-        alert("전송!")
-    });
-    
+            alert("전송!");
+        });
 
 </script>
-
 </body>
 </html>

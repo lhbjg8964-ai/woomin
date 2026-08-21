@@ -4,14 +4,17 @@ a{text-decoration: none;color:#000;}
 
 #wrapper{
     width: 900px;
+    /* margin-left: auto; 오른쪽정력 */
     margin: 0 auto;
+    /* text-align: center; */
 }
+/*전체를 900px 중앙정렬*/
 
-.cf::after{
+/* .cf::after{
     content: "";
     display: block;
     clear: both;
-}
+} */
 
 header{
     background-color: #f46075;
@@ -61,7 +64,7 @@ nav ul li:hover a{
 }
 .main{
     /* overflow: hidden; */
-    /* height: 550px; */
+    height: 550px;
 }
 
 section{
@@ -70,11 +73,12 @@ section{
     background-color: skyblue;
     float: left;
 }
-
 section h2{
     padding: 10px 0;
     text-align: center;
 }
+
+
 
 section article{
     width: 280px;
@@ -87,7 +91,6 @@ section article{
     text-align: justify;
     /* 양쪽정렬 */
 }
-
 section article p{
     font-size: 13px;
 }

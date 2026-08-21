@@ -195,47 +195,48 @@ article:hover .bg1 span{
     transform: scale(1) rotateY(360deg);
     color:#222;
 }
-/* article 텍스트 박스 스타일 */
+
+/* article 텍스트박스 스타일 */
 article .txt{
-    color: #666;
+    color:#666;
     background-color: #fff;
     box-sizing: border-box;
     padding: 40px 30px;
     /* 글씨를 띄워서 보려고 준것 */
 }
 article:nth-child(3) .txt{
-    background-color: #bff7fa;
+      background-color: #bff7fa;
 }
 article:nth-child(11) .txt{
     background-color: #e3f1fb;
 }
-/* 웹폰트 아이콘 기본스타일(화살표) */
-
+/* 웹폰트 아이콘 기본 스타일(화살표) */
 article .txt i{
     font-size: 300px;
     color: #b3effc;
-    position: absolute;
-    bottom: -70px;
-    right: -200px;
-    opacity: 0;
-    /* 화살표 크게 확대 한 후 오른쪽으로 안보이게 이동 
-    불투명도 0 */
+     position: absolute;
+     bottom: -70px;
+     right:-200px;
+     opacity: 0;
+     /* 화살표 크게 확대한 후 오른쪽으로 안보이게 이동
+     불투명도 0  */
 }
 article:nth-child(3) .txt i{
     font-size: 200px;
     color: #fff;
-    position: absolute;
-    bottom: -20px;
-    right: -15px;
-    opacity: 0.7;
+     position: absolute;
+     bottom: -20px;
+     right:-15px;
+     opacity: 0.7;
 }
 article .txt strong{
-    font-size: 30px;
+   font-size: 30px;
     line-height: 1.6;
     color: #444;
     margin-bottom: 20px;
-    display: block; /*블럭요소로 변경(줄바뀜    )*/
+    display: block;/*블럭요소로 변경(줄바뀜)*/
 }
+
 /* 텍스트 박스 호버 효과 */
 article .txt, article .txt i{
     transition: all 1s;
@@ -245,10 +246,16 @@ article .txt strong{transition: all 0.7s;}
 
 article:hover .txt{
     background-color: #6ce2fb;
-    color: #fff;
+     color: #fff;
+      /* 제목 제외 작은글씨 변화 및 배경색 변화 */
 }
+
 article:hover .txt i{
-    /* right:-200, opacity:0 화살표 제자리로 오면서 opacity:0.5 */
-    right: 0;
+    /* right: -200, opacity:0 화살표 제자리오면서 opacity:0.5 */
+    right:0;
     opacity: 0.5;
 }
+
+article:hover .txt strong{color:#fff;}
+
+/* 제목 글자가 흰색으로 변경 */

@@ -13,8 +13,5 @@ public class Main1 {
         System.out.println(s2);
         System.out.println(s3);
 
-
-
     }
-    
 }

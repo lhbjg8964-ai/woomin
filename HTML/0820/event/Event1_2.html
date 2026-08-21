@@ -6,20 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-<!-- addEventListener -->
+<!-- addEventListener() -->
 
-<div id="box">클릭</div>
+<div id="box">마우스를 올려보세요</div>
 
 <script>
-    const box = document.getElementById("box");
+   const box = document.getElementById("box");
 
-    box.addEventListener("mouseover", ()=>{
-        box.style.backgroundColor = "yellow";
+    box.addEventListener("mouseover",()=>{
+       box.style.background = "yellow";
     });
-    box.addEventListener("mouseout", ()=>{
-        box.style.backgroundColor = "white";
+
+     box.addEventListener("mouseout",()=>{
+       box.style.background = "white";
     });
+
 </script>
-
 </body>
 </html>

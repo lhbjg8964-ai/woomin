@@ -7,25 +7,24 @@
 </head>
 <body>
 
-    <div id="parent">
-        <button id="child">버튼</button>
-    </div>
-    
+<div id="parent">
+    <button id="child">버튼</button>
+</div>
 <script>
-    const parent = document.getElementById("parent");
-    const child = document.getElementById("child");
+const parent = document.getElementById("parent");
+const child = document.getElementById("child");
+//  버튼을 클릭하면 출력순가 자식클릭 - 부모클릭
+//이처럼 이벤트가 자식요소에서 부모 요소로 전파되는 현상을 
+// 이벤트 버블링(Event Bubbling)이라고 합니다.
+parent.addEventListener("click", () => {
+    console.log("부모 클릭");
+});
 
-    // 버튼을 클릭하면 자식 -> 부모
-    // 이처럼 이벤트가 자식 요소에서 부모 요소로 전파되는 현상을 이벤트 버블링
-    // 이벤트 버블링(Evnet Bubbling)
-    parent.addEventListener("click", ()=>{
-        console.log("부모 클릭")
-    })
+child.addEventListener("click", () => {
+    console.log("자식 클릭");
+});
 
-    child.addEventListener("click", ()=>{
-        console.log("자식 클릭")
-    })
+
 </script>
-
 </body>
 </html>

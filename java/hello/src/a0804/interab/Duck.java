@@ -2,8 +2,11 @@ package a0804.interab;
 
 //자식클래스 오리(상속 + 여러 인터페이스 구현)
 public class Duck extends Animal implements Flyable, Swimmable{
+    private String color;
+
     public Duck(String name, int age, String color) {
         super(name, age);
+        this.color = color;
     }
      @Override
     public void makeSound() {

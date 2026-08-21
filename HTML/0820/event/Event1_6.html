@@ -6,21 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    
- <button>사과</button>
- <button>바나나</button>
- <button>포도</button>
-<script>
-    const buttons = document.querySelectorAll("button");
 
-    buttons.forEach((button) =>{
-        button.addEventListener("click", (e)=>{
-            alert(e.target.innerHTML);
-        })
-    })
+<button>사과</button>
+<button>바나나</button>
+<button>포도</button>
+<script>
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        alert(e.target.innerHTML);
+    });
+});
 
 
 </script>
-
 </body>
 </html>

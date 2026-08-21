@@ -43,7 +43,7 @@ public class StudentCrudApp {
                     updateStudent();
                     break;
                 case 4:
-                    //deleteStudent();
+                    deleteStudent();
                     break;
                 case 5:
                     System.out.println("프로그램을 종료합니다.");
@@ -53,6 +53,29 @@ public class StudentCrudApp {
                     System.out.println("올바른 메뉴 번호를 선택해주세요.");
             }
         }
+
+    }
+
+    private static void deleteStudent() {
+       System.out.println("\n--- [학생 정보 삭제] ---");
+        System.out.print("삭제할 학번 입력: ");
+        String id = scanner.nextLine();
+        // boolean removed = false;
+        // for (int i = 0; i < students.size(); i++) {
+        //     if (students.get(i).getId().equals(id)) {
+        //         students.remove(i);
+        //         removed = true;
+        //         break;
+        //     }
+        // }
+        boolean removed = students.removeIf(s -> s.getId().equals(id));         
+        if(removed){
+            saveToFile();
+            System.out.println("학생 정보가 성공적으로 삭제");
+        }else{
+             System.out.println("해당학생이 없어요");
+        }
+
 
     }
 

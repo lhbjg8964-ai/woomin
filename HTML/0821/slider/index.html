@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .header{
+            width: 100%;
+            max-width: 1920px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: #ccc;
+        }
+        .slide-container{
+            width: 100%;
+            max-width: 1920px;
+            height: 480px;
+            position: relative;
+        }
+        .slider{
+            display: flex;
+            transition: transform 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="slide-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="images/slide1.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="images/slide2.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="images/slide3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const slider = document.querySelector('.slider'); // 슬라이드 사진을 감싸는 선택자
+    const slide = document.querySelectorAll('.slide'); // 슬라이드 3장 사진
+    let index = 0; //인덱스
+    function auto(){
+        index++;
+        if(index >=slides.length){
+            index = 0;
+        }
+        const transformValue = -index * 100 + "%"; // -100%, -200%, -300%
+        slider.style.transform = 'translateX(${transfromValue})';
+
+    }
+    setInterval(auto, 2000);
+
+</script>

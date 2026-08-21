@@ -1,6 +1,6 @@
-package a0804.Interface2;
+package a0804.interface2;
 
-public class Tv implements RemoteControl {
+public class TV implements RemoteControl {
 
     @Override
     public void powerOn() {
