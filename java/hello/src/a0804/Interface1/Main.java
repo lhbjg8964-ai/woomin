@@ -1,4 +1,4 @@
-package a0804.interface1;
+package a0804.Interface1;
 
 public class Main {
      public static void main(String[] args) {

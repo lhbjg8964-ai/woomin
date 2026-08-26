@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{margin: 0;padding: 0;}
+    li{
+        list-style: none;
+        float: left;
+        width: 600px;
+    }
+    h1{text-align: center;}
+    #banner_wrap{
+        width: 600px;
+        height:255px;
+        margin: 0 auto;
+        border: 1px solid #aaa;
+        position: relative;
+        overflow: hidden;
+    }
+    .prev{
+        position: absolute;
+        top:40%;
+        left:20px;
+    }
+    .next{
+        position: absolute;
+        top:40%;
+        right:20px;
+    }
+
+    #banner{
+        width: 2400px;
+        height: 255px;
+        border: 1px solid red;
+    }
+    #frame{
+      
+    }
+
+
+</style>
+
+</head>
+<body>
+    <h1>롤링 슬라이더 배너만들기</h1>
+    <div id="banner_wrap">
+        <div id="frame">
+            <ul id="banner">
+                <li><a href="#"><img src="images/car1.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/car2.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/car3.jpg" alt=""></a></li>
+            </ul>
+        </div>
+        <p>
+            <a href="#" class="prev"><img src="images/prev_btn.png" alt=""></a>
+            <a class="next" href="#"><img src="images/next_btn.png" alt=""></a>
+        </p>
+    </div>
+</body>
+</html>
+<script>
+
+    // ==================================================
+    // 1. 슬라이드에 필요한 요소와 변수 준비
+    // ==================================================
+
+    // id="banner"인 ul을 가져온다.
+    // 이 ul 전체를 왼쪽/오른쪽으로 이동시켜 슬라이드를 만든다.
+    let list = document.getElementById('banner');
+
+
+    // #banner 안에 있는 모든 li를 가져온다.
+    //
+    // 현재:
+    // listLi[0] → car1
+    // listLi[1] → car2
+    // listLi[2] → car3
+    let listLi = document.querySelectorAll('#banner li');
+
+
+    // li의 총 개수를 저장한다.
+    //
+    // 현재 이미지가 3장이므로:
+    // total = 3
+    //
+    // 나중에 이미지가 4장, 5장으로 늘어나도
+    // 자동으로 개수를 계산해준다.
+    let total = listLi.length;
+
+
+    // li 한 개의 가로 크기
+    // CSS에서 li의 width가 600px이므로 600을 저장한다.
+    //
+    // 한 번 이동할 때마다 600px씩 이동한다.
+    let li_width = 600;
+
+
+    // 현재 몇 번째 슬라이드 위치인지 저장한다.
+    //
+    // num = 0 → car1
+    // num = 1 → car2
+    // num = 2 → car3
+    // num = 3 → 복사한 car1
+    let num = 0;
+
+
+
+    // ==================================================
+    // 2. 첫 번째 이미지를 복사해서 맨 뒤에 추가
+    // ==================================================
+
+    // 첫 번째 li만 복사하기 때문에 1번 반복한다.
+    for(let i = 0; i < 1; i++){
+
+        // listLi[0]은 첫 번째 이미지(car1)이다.
+        //
+        // cloneNode(true)
+        // → li뿐만 아니라 li 안에 있는
+        //   a, img 등의 자식 요소까지 전부 복사한다.
+        let copyObj = listLi[i].cloneNode(true);
+
+
+        // 복사한 첫 번째 이미지를 banner 맨 뒤에 추가한다.
+        //
+        // 원래:
+        // car1 → car2 → car3
+        //
+        // 복사 후:
+        // car1 → car2 → car3 → car1(복사본)
+        //
+        // 마지막 car3 다음에 car1이 자연스럽게 나오게 만들어
+        // 무한 슬라이드처럼 보이게 한다.
+        list.append(copyObj);
+    }
+
+
+
+    // ==================================================
+    // 3. 이전 / 다음 버튼 가져오기
+    // ==================================================
+
+    // class="next"인 다음 버튼
+    let next = document.querySelector('.next');
+
+    // class="prev"인 이전 버튼
+    let prev = document.querySelector('.prev');
+
+
+
+    // ==================================================
+    // 4. 다음 버튼 클릭
+    // ==================================================
+
+    next.addEventListener("click", function(e){
+
+        // a 태그의 기본 기능을 막는다.
+        //
+        // href="#" 때문에 클릭했을 때
+        // 페이지 맨 위로 이동하는 것을 방지한다.
+        e.preventDefault();
+
+
+        // num이 total과 같다는 것은
+        // 복사한 첫 번째 이미지까지 이동했다는 뜻이다.
+        //
+        // 현재 total = 3
+        //
+        // num = 0 → car1
+        // num = 1 → car2
+        // num = 2 → car3
+        // num = 3 → 복사한 car1
+        //
+        // 기존의
+        // if(num === 3)
+        //
+        // 대신
+        // if(num === total)
+        //
+        // 을 사용하면 이미지 개수가 바뀌어도 사용할 수 있다.
+        if(num === total){
+
+            // 현재 위치를 첫 번째 이미지 번호로 변경한다.
+            num = 0;
+
+
+            // 애니메이션을 없앤다.
+            //
+            // 이유:
+            // 복사한 car1 → 원래 car1로 돌아가는 모습이
+            // 사용자에게 보이지 않도록 순간 이동시키기 위해서이다.
+            list.style.transition = 'none';
+
+
+            // 첫 번째 이미지 위치로 순간 이동
+            //
+            // margin-left: 0px
+            list.style.marginLeft = 0;
+        }
+
+
+        // 위치를 초기화한 직후 바로 애니메이션을 적용하면
+        // 브라우저에서 transition 처리가 자연스럽지 않을 수 있다.
+        //
+        // 따라서 0.05초(50ms) 후 다음 이동을 실행한다.
+        setTimeout(function(){
+
+            // 다음 이미지로 이동하기 위해 1 증가
+            num++;
+
+
+            // margin-left가 변경될 때
+            // 0.5초 동안 부드럽게 이동
+            list.style.transition = 'margin-left 0.5s';
+
+
+            // 현재 번호 × 600px만큼 왼쪽으로 이동
+            //
+            // num = 1
+            // -600 × 1 = -600px
+            // → car2
+            //
+            // num = 2
+            // -600 × 2 = -1200px
+            // → car3
+            //
+            // num = 3
+            // -600 × 3 = -1800px
+            // → 복사한 car1
+            list.style.marginLeft = -li_width * num + 'px';
+
+        }, 50);
+
+    });
+
+
+
+    // ==================================================
+    // 5. 이전 버튼 클릭
+    // ==================================================
+
+    prev.addEventListener("click", function(e){
+
+        // a 태그의 기본 기능 방지
+        e.preventDefault();
+
+
+        // 현재 첫 번째 이미지(num = 0)에 있다면
+        // 바로 왼쪽으로 이동할 이미지가 없다.
+        //
+        // 따라서 먼저 맨 뒤에 복사해놓은
+        // car1 위치로 순간 이동한다.
+        if(num === 0){
+
+            // total = 3
+            //
+            // num을 3으로 변경하면
+            // 복사된 car1 위치가 된다.
+            num = total;
+
+
+            // 이동하는 모습이 보이지 않도록
+            // transition을 제거한다.
+            list.style.transition = 'none';
+
+
+            // 복사된 car1 위치로 순간 이동
+            //
+            // 현재:
+            // -600 × 3
+            // = -1800px
+            list.style.marginLeft = -li_width * num + 'px';
+        }
+
+
+        // 0.05초 후 실제 이전 이미지로 이동한다.
+        setTimeout(function(){
+
+            // 이전 이미지이므로 번호를 1 감소
+            num--;
+
+
+            // 0.5초 동안 부드럽게 이동
+            list.style.transition = 'margin-left 0.5s';
+
+
+            // 감소한 num 위치로 이동
+            //
+            // 예를 들어 첫 번째 이미지에서
+            // 이전 버튼을 누르면:
+            //
+            // num = 0
+            //
+            // ↓
+            //
+            // 위의 if문에서
+            // num = 3
+            //
+            // ↓
+            //
+            // 여기서 num--
+            //
+            // num = 2
+            //
+            // ↓
+            //
+            // -600 × 2 = -1200px
+            //
+            // 결과:
+            // car3이 나타난다.
+            list.style.marginLeft = -li_width * num + 'px';
+
+        }, 50);
+
+    });
+
+
+
+    // ==================================================
+    // 6. 자동 슬라이드 함수
+    // ==================================================
+
+    function autoPlay(){
+
+        // 마지막 복사 이미지에 도착했는지 확인한다.
+        //
+        // num === total
+        //
+        // 현재는:
+        // num === 3
+        //
+        // 즉 복사한 car1을 보고 있는 상태이다.
+        if(num === total){
+
+            // 실제 첫 번째 이미지 위치로 초기화
+            num = 0;
+
+
+            // 뒤로 돌아가는 모습이 보이지 않도록
+            // 애니메이션 제거
+            list.style.transition = 'none';
+
+
+            // 첫 번째 이미지 위치로 순간 이동
+            list.style.marginLeft = 0;
+        }
+
+
+        // 0.05초 후 다음 이미지로 이동
+        setTimeout(function(){
+
+            // 다음 이미지 번호
+            num++;
+
+
+            // 0.5초 동안 부드럽게 이동
+            list.style.transition = 'margin-left 0.5s';
+
+
+            // 다음 이미지 위치로 이동
+            list.style.marginLeft = -li_width * num + 'px';
+
+        }, 50);
+    }
+
+
+
+    // ==================================================
+    // 7. 자동 슬라이드 실행
+    // ==================================================
+
+    // setInterval(함수, 시간)
+    //
+    // 1000ms = 1초
+    // 3000ms = 3초
+    //
+    // 따라서 3초마다 autoPlay()가 실행된다.
+    //
+    // 결과:
+    //
+    // car1
+    //   ↓ 3초
+    // car2
+    //   ↓ 3초
+    // car3
+    //   ↓ 3초
+    // car1
+    //   ↓ 3초
+    // car2
+    //   ↓
+    // 계속 반복
+    setInterval(autoPlay, 3000);
+
+</script>
