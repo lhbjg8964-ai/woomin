@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.bxslider3.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+</head>
+<style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+ul {list-style: none;}
+a {text-decoration: none}
+
+header {
+    height: 105px;
+    border-top: 5px solid #009223;
+    text-align: center;
+    padding-top: 35px;
+}
+
+header img {
+    width: 200px;
+}
+
+#gnb {
+    width: 100%;
+    height: 65px;
+    background-color: #fff;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100;
+    transition: height 0.3s;
+}
+
+#gnb:hover {
+    height: 340px;
+}
+
+#gnb > ul {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0;
+}
+
+#gnb > ul > li {
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+    vertical-align: top;
+    font-size: 16px;
+}
+
+#gnb .dp1 {
+    display: block;
+    height: 65px;
+    line-height: 65px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+#gnb > ul > li:hover > .dp1 {
+    color: #009223;
+}
+
+.dp2 {
+    width: 160px;
+    padding-top: 25px;
+}
+
+.dp2 li {
+    margin-bottom: 16px;
+}
+
+.dp2 a {
+    display: block;
+    font-size: 15px;
+    color: #333;
+}
+
+.dp2 a:hover {
+    color: #009223;
+    text-decoration: underline;
+}
+
+section {
+    padding-top: 65px;
+}
+
+article {
+    width: 100%;
+    overflow: hidden;
+}
+
+article img {
+    display: block;
+    width: 100%;
+}
+
+</style>
+
+<script>
+    $(function(){
+        // ul 클래스 slider
+        $(".slider").bxSlider();
+    });
+</script>
+<body>
+        <header>
+    <img src="SubWay_img/Subway.png" alt="">
+    </header>
+    <nav id="gnb">
+                    <ul>
+                        <li>
+                            <a class="dp1" href="#n">메뉴소개</a>
+                            <div class="dp2">
+                                <ul>
+                                    <li>
+                                        <a href="#">샌드위치</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">랩ㆍ기타</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">샐러드</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">아침메뉴</a>
+                                    </li> 
+                                    <li>
+                                        <a href="#">스마일 썹</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">단체메뉴</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="dp1">이용방법</a>
+                            <div class="dp2">
+                                <ul>
+                                    <li><a href="#">써브웨이 이용방법</a></li><!-- 20180201 -->
+                                    <li><a href="#">단체메뉴 이용방법</a></li>
+                                    <li><a href="#">신선한 재료 소개</a></li>
+                                    <li><a href="#">App 이용방법</a></li> <!-- 180129 hidden 처리 -->
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="dp1">새소식</a>
+                            <div class="dp2">
+                                <ul>
+                                    <li><a href="#">이벤트ㆍ프로모션</a></li>
+                                    <li><a href="#">뉴스ㆍ공지사항</a></li>
+                                    <li><a href="#">광고영상</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="dp1">써브웨이</a>
+                            <div class="dp2">
+                                <ul>
+                                    <li><a href="#">써브웨이 역사</a></li>
+                                    <li><a href="#">써브웨이 약속</a></li>
+                                    <li><a href="#">샌드위치 아티스트 지원</a></li>
+                                    <li><a href="#">매장찾기</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="dp1">가맹점</a>
+                            <div class="dp2">
+                                <ul>
+                                    <li><a href="#">써브웨이 프랜차이즈</a></li>
+                                    <li><a href="#">가맹관련 FAQ</a></li>
+                                    <li><a href="#">가맹신청ㆍ문의</a></li>
+                                    <li><a href="#">지사안내</a></li>
+                                    <li><a href="#">사업설명회</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="dp1" href="#">온라인 주문</a>
+                            <div class="dp2">
+                                <ul>
+                                    <li><a href="#">FAST-SUB</a></li>
+                                    <li><a href="#">HOME-SUB</a></li>
+                                    <li><a href="#">단체주문</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+    <section>
+        <ul class="slider">
+            <li><img src="SubWay_img/g.jpg" alt="사진1"></li>
+            <li><img src="SubWay_img/h.jpg" alt="사진2"></li>
+            <li><img src="SubWay_img/f.jpg" alt="사진3"></li>
+            <li><img src="SubWay_img/e.jpg" alt="사진4"></li>
+            <li><img src="SubWay_img/c.jpg" alt="사진5"></li>
+            <li><img src="SubWay_img/b.jpg" alt="사진6"></li>
+            <li><img src="SubWay_img/a.jpg" alt="사진7"></li>
+        </ul>
+    </section>
+</body>
+</html>
