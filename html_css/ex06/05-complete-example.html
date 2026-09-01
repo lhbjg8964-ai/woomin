@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grid 종합 예제">
+    <title>Grid 종합 예제 - 완성된 웹사이트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        
+        /* 헤더 - Flexbox */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        /* 메인 - Grid */
+        main {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: auto 1fr;
+            grid-template-areas:
+                "sidebar hero"
+                "sidebar content";
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        /* 히어로 섹션 */
+        .hero {
+            grid-area: hero;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        /* 사이드바 */
+        .sidebar {
+            grid-area: sidebar;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar a {
+            color: #666;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .sidebar a:hover {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        /* 콘텐츠 그리드 */
+        .content {
+            grid-area: content;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .card h3 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* 푸터 - Flexbox */
+        footer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px;
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .footer-section {
+            flex: 1 1 250px;
+            min-width: 200px;
+        }
+        
+        .footer-section h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #3498db;
+        }
+        
+        /* 반응형 */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+            
+            main {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "hero"
+                    "sidebar"
+                    "content";
+            }
+            
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Grid 사이트</div>
+        <nav>
+            <a href="#home">홈</a>
+            <a href="#about">소개</a>
+            <a href="#services">서비스</a>
+            <a href="#portfolio">포트폴리오</a>
+            <a href="#contact">연락처</a>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <h3>사이드바</h3>
+            <ul>
+                <li><a href="#">카테고리 1</a></li>
+                <li><a href="#">카테고리 2</a></li>
+                <li><a href="#">카테고리 3</a></li>
+                <li><a href="#">카테고리 4</a></li>
+                <li><a href="#">카테고리 5</a></li>
+            </ul>
+        </aside>
+
+        <section class="hero">
+            <div>
+                <h1>Grid로 만든 웹사이트</h1>
+                <p style="font-size: 1.2em; opacity: 0.9;">
+                    Grid와 Flexbox를 조합하여 완성된 레이아웃
+                </p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Grid 레이아웃</h3>
+                <p>
+                    전체 페이지 구조는 Grid로 구성되었습니다. 
+                    grid-template-areas를 사용하여 명확한 레이아웃을 만들었습니다.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Flexbox 정렬</h3>
+                <p>
+                    헤더와 푸터는 Flexbox를 사용하여 내부 요소를 정렬했습니다. 
+                    각 도구의 장점을 최대한 활용했습니다.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>반응형 디자인</h3>
+                <p>
+                    auto-fit과 minmax를 사용하여 완벽한 반응형 그리드를 구현했습니다. 
+                    모든 기기에서 완벽하게 작동합니다.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔧</div>
+                <h3>조합 사용</h3>
+                <p>
+                    Grid와 Flexbox를 조합하여 복잡한 레이아웃을 쉽게 구현했습니다. 
+                    각 도구를 적절한 곳에 사용하는 것이 핵심입니다.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h3>회사 정보</h3>
+            <p>주소: 서울시 강남구</p>
+            <p>전화: 02-1234-5678</p>
+            <p>이메일: info@example.com</p>
+        </div>
+        <div class="footer-section">
+            <h3>빠른 링크</h3>
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">소개</a></li>
+                <li><a href="#">서비스</a></li>
+                <li><a href="#">포트폴리오</a></li>
+                <li><a href="#">연락처</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>SNS</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+
