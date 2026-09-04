@@ -1,8 +1,9 @@
 package a0826.interfaceShop;
 
-public class CouponDiscount implements Discount{
+public class CouponDiscount implements Discount {
 
-    private int couponAmount;
+    private int couponAmount; //쿠폰가격
+    
 
     public CouponDiscount(int couponAmount) {
         this.couponAmount = couponAmount;
@@ -16,7 +17,7 @@ public class CouponDiscount implements Discount{
 
     @Override
     public String getName() {
-        return "쿠폰할인(" + couponAmount + "원";
+        return "쿠폰할인(" + couponAmount + "원)";
     }
     
 }

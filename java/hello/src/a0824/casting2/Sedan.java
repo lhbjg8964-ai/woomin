@@ -1,4 +1,4 @@
-package a0824.casting2;
+package  a0824.casting2;
 
  class Sedan extends Vehicle {
    private double insurance;

@@ -1,6 +1,6 @@
 package a0826.interfaceShop;
 
-public class NoDiscount implements Discount{
+public class NoDiscount implements Discount {
 
     @Override
     public double apply(int price) {

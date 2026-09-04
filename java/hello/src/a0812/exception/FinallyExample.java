@@ -1,6 +1,6 @@
 package a0812.exception;
 
-public interface FinallyExample {
+public class FinallyExample {
     public static void main(String[] args) {
         System.out.println("=== 프로그램 시작 ===");
         

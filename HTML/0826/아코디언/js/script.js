@@ -15,13 +15,17 @@ $('dl dt').click(function(){
        $('dl dt').removeClass('selected');
        $(this).addClass('selected'); 
     }
+
 });
-    // 5. dl dt mouseover하면 this addClass 'over'
-    $('dl dt').mouseover(function(){
-        $(this).addClass('over'); //흐린회색 배경넣기
-    });
-    // 6. dl dt mouseout 하면 this removeClass 'over
-    $('dl dt').mouseout(function(){
-        $(this).removeClass('over'); //흐린회색 배경빼기
-    });
+
+//5. dl dt 마우스오버 하면 this addClass 'over'
+$('dl dt').mouseover(function(){
+    $(this).addClass('over'); //흐린회색 배경넣기
+});
+
+//6. dl dt 마우스아웃 하면 this removeClass 'over'
+$('dl dt').mouseout(function(){
+    $(this).removeClass('over'); //흐린회색 배경빼기
+});
+
 });

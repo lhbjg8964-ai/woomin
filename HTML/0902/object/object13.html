@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//속성 삭제        
+let user1 = {
+    name: '홍길동',
+    age: 25,
+};
+// 방법 1: 전개 연산자
+let user2 = {...user1}; // user1의 속성을 펼쳐서 새객체 {} 안넣습니다.
+
+// 방법 2: Object.assign()
+let user3 = Object.assign({}, user1); //빈객체 {} 에 user1 속성을 복사
+
+user2.name = '김철수';
+console.log(user1.name);  // '홍길동' (원본 변경 안 됨)
+console.log(user2.name);  // '김철수'
+
+    </script>
+</body>
+</html>

@@ -3,4 +3,4 @@ $(function(){
         auto:true,
         controls:false,
     });
-})
+});

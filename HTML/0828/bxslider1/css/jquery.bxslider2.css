@@ -6,7 +6,7 @@
   position: relative;
   margin-bottom: 60px;
   padding: 0;
-  zoom: 1;
+  *zoom: 1;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
 }
@@ -34,7 +34,7 @@ ul.bxslider {
   -webkit-box-shadow: 0 0 5px #ccc;
   box-shadow: 0 0 5px #ccc;
   border: 5px solid #fff;
-  background: #fff; 슬라이드 테두리 그림자 삭제*/
+  background: #fff;  슬라이드 테두리 그림자 삭제*/
 }
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
@@ -42,11 +42,10 @@ ul.bxslider {
   bottom: -30px;
   width: 100%;
 }
-
 /* LOADER */
 .bx-wrapper .bx-loading {
   min-height: 50px;
-  background: url('images/bx_loader.gif') center center no-repeat #ffffff;
+  background: url('../images/bx_loader.gif') center center no-repeat #ffffff;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -98,23 +97,23 @@ ul.bxslider {
 }
 .bx-wrapper .bx-prev:hover,
 .bx-wrapper .bx-prev:focus {
-  background-position: 0 -54px;
+  background-position: 0px -54px;
 }
 .bx-wrapper .bx-next {
   right: 10px;
-  background: url('../images/next_btn.jpg') no-repeat 0 0;
+  background: url('../images/next_btn.jpg') no-repeat 0px 0px;
 }
 .bx-wrapper .bx-next:hover,
 .bx-wrapper .bx-next:focus {
-  background-position: 0 -54px;
+  background-position: 0px -54px;
 }
 .bx-wrapper .bx-controls-direction a {
   position: absolute;
   top: 50%;
-  margin-top: -50px;
+  margin-top: -27px;
   outline: 0;
   width: 22px;
-  height: 54px;
+  height:54px;
   text-indent: -9999px;
   z-index: 9999;
 }
@@ -131,7 +130,7 @@ ul.bxslider {
   width: 10px;
   height: 11px;
   outline: 0;
-  background: url('images/controls.png') -86px -11px no-repeat;
+  background: url('../images/controls.png') -86px -11px no-repeat;
   margin: 0 3px;
 }
 .bx-wrapper .bx-controls-auto .bx-start:hover,
@@ -145,7 +144,7 @@ ul.bxslider {
   width: 9px;
   height: 11px;
   outline: 0;
-  background: url('images/controls.png') -86px -44px no-repeat;
+  background: url('../images/controls.png') -86px -44px no-repeat;
   margin: 0 3px;
 }
 .bx-wrapper .bx-controls-auto .bx-stop:hover,

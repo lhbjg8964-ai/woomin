@@ -1,3 +1,4 @@
+package a0824.casting3;
 /**
  * 야구 선수 캐스팅 데모
  * - 업캐스팅: Player[] 에 Batter / Pitcher
@@ -27,6 +28,8 @@ public class BaseballCastingDemo {
             p.play();
         }
 
+
+        //대기 매서드 specialAction 을 불러서 type을 물어본후 다운캐스팅후 실행
         System.out.println("\n=== 특기 (다운캐스팅) ===");
         for (Player p : team) {
             specialAction(p);
@@ -64,12 +67,12 @@ public class BaseballCastingDemo {
 
     /** 12번 — 역할별 특기 */
     public static void specialAction(Player p) {
-        if (p instanceof Batter) {
-            Batter b = (Batter) p;
-            b.swing();
-        } else if (p instanceof Pitcher) {
+        if (p instanceof Batter) { //타자면?
+            Batter b = (Batter) p; //다운캐스팅
+            b.swing(); //타자의 swing 메서드
+        } else if (p instanceof Pitcher) {//투수면
             Pitcher pit = (Pitcher) p;
-            pit.throwBall();
+            pit.throwBall();//투수의 throwBall 실행
         } else {
             System.out.println("알 수 없는 선수");
         }
@@ -83,14 +86,14 @@ public class BaseballCastingDemo {
         int pitcherCount = 0;
 
         for (Player p : team) {
-            if (p instanceof Batter) {
+            if (p instanceof Batter) { //타자인지
                 Batter b = (Batter) p;
-                sumAvg += b.avg;
-                batterCount++;
-            } else if (p instanceof Pitcher) {
+                sumAvg += b.avg; //타율을 누적
+                batterCount++; //타자 숫자 누적
+            } else if (p instanceof Pitcher) {//투수인지
                 Pitcher pit = (Pitcher) p;
-                sumEra += pit.era;
-                pitcherCount++;
+                sumEra += pit.era; //방어율 누적
+                pitcherCount++; //투수숫자
             }
         }
 
@@ -101,7 +104,7 @@ public class BaseballCastingDemo {
                     sumAvg / batterCount, batterCount);
         }
 
-        if (pitcherCount == 0) {
+        if (pitcherCount == 0) { //투수 없음
             System.out.println("평균 방어율: 없음");
         } else {
             System.out.printf("평균 방어율: %.2f (%d명)%n",
@@ -111,8 +114,8 @@ public class BaseballCastingDemo {
 
     /** 15번 — 타율 비교 */
     public static void compareAvg(Player p1, Player p2) {
-        if (p1 instanceof Batter && p2 instanceof Batter) {
-            Batter b1 = (Batter) p1;
+        if (p1 instanceof Batter && p2 instanceof Batter) { //p1과 p2가 타자인지 확인
+            Batter b1 = (Batter) p1; //다운캐스팅 
             Batter b2 = (Batter) p2;
 
             if (b1.avg > b2.avg) {

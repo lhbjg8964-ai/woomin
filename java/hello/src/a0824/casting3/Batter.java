@@ -1,3 +1,5 @@
+package a0824.casting3;
+
 // 타자 — 타율(avg), 안타(hit)
 public class Batter extends Player {
     double avg;

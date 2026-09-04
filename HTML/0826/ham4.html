@@ -13,7 +13,25 @@
            $('.ham').toggleClass('on');
            $('nav').toggleClass('active');
         });
+
+         $('.sub').hide();
+
+        $('nav>ul>li>a').click(function(){
+            var status = $(this).next('.sub').css('display'); //none , block
+            //alert(status);
+            if(status == 'none'){
+                 $('.sub').slideUp(500);
+                 $(this).next('.sub').slideDown(500);
+            }else{
+                $('.sub').slideUp(500);
+            }
+
+            return false;
+        });
+
     });
+
+   
   </script>
 
 <style>
@@ -70,10 +88,13 @@
     }
 
     nav ul li {
-        height: 40px;
+        /* height: 40px; */
         line-height: 40px;
         text-align: center;
         font-weight: bold;
+    }
+    nav ul li .sub{
+        background-color: yellowgreen;
     }
 </style>
 
@@ -86,10 +107,41 @@
     </header>
     <nav>
         <ul>
-            <li>회사소개</li>
-            <li>제품소개</li>
-            <li>커뮤니티</li>
-            <li>다운로드</li>
+            <li>
+                <a href="#">회사소개</a>
+                <ul class="sub">
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ul>
+            </li>
+             <li>
+                <a href="#">제품소개</a>
+                <ul class="sub">
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ul>
+            </li>
+             <li>
+                <a href="#">커뮤니티</a>
+                <ul class="sub">
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ul>
+            </li>
+             <li>
+                <a href="#">다운로드</a>
+                <ul class="sub">
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ul>
+            </li>
+            
+          
+            
         </ul>
     </nav>
 </body>

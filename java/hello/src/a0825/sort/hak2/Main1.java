@@ -7,27 +7,27 @@ public class Main1 {
     public static void main(String[] args) {
         ArrayList<Student> students = new ArrayList<>();
 
-        // ===== 더미데이터 =====
+        // ==== 더미데이트 =====
         students.add(new Student("홍길동", 20, 2023001));
         students.add(new Student("김철수", 22, 2023002));
         students.add(new Student("이영희", 21, 2023003));
         students.add(new Student("박민수", 23, 2023004));
         students.add(new Student("최지훈", 19, 2023005));
         students.add(new Student("강다은", 20, 2023006));
-
+       
         Collections.sort(students);
 
-        // 정렬된 결과 출력
+        //정렬된 결과 출력
         System.out.println("정렬된 학생 목록");
-        for(Student student : students){
-            System.out.println(student);
+        for (Student student : students) {
+             System.out.println(student);
         }
     }
 }
 
-// implements Comparable<Student> Student 객체끼리 비교할 수 있도록 만들겠다.
-class Student implements Comparable<Student>{
-    private String name;
+// implements Comparable<Student> Student 객체끼리 비교할 수있도록 만들겠다.
+class Student implements Comparable<Student> {
+     private String name;
     private int age;
     private int studentId;
     
@@ -70,11 +70,11 @@ class Student implements Comparable<Student>{
     public int compareTo(Student o) {
 
         return this.name.compareTo(o.name);
-        // 내림차순이면 return o.name.compareTo(this.name);
-        // 오름차순
-        // return Integer.compare(this.age, o.age);
-        // 내림차순
-        // return Integer.compare(o.age, this.age);
+        //내림차순이면 o.name.compareTo(this.name)
+       //오름차순
+       // return Integer.compare(this.age, o.age);
+        //내림차순
+       // return Integer.compare(o.age, this.age);
     }
     
 }

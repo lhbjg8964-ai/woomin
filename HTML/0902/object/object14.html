@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//속성 삭제        
+let user1 = {
+    name: '홍길동',
+    address:{
+        city:'서울'
+    }
+};
+// 얕은복사 
+let user2 = {...user1}; 
+// user2.name = '김철수';
+// console.log(user1.name);
+//얕은 복사는 1단계 복사 , 객체안에 객체인 address 는 메모리의 같은 주소(참조값)을 공유
+user2.address.city = '부산'; 
+console.log(user1.address.city); 
+// let user2 = {
+//     ...user1,
+//     address: { ...user1.address } // address 객체도 따로 복사
+// };
+//깊은복사
+let user3 = JSON.parse(JSON.stringify(user1));
+//1. JSON.stringify(user1)-> user1객체를 JSON 문자열로 변환(객체-> 문자열)
+//2. JSON 문자열을 새로운 객체로 변환
+
+user3.address.city = '인천';
+
+console.log(user1.address.city); // 부산
+console.log(user3.address.city); // 인천
+
+
+    </script>
+</body>
+</html>

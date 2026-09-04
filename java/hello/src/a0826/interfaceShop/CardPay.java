@@ -1,6 +1,6 @@
 package a0826.interfaceShop;
 
-public class CardPay implements Payable{
+public class CardPay implements Payable {
     private int limit;
 
     public CardPay(int limit) {
@@ -14,13 +14,14 @@ public class CardPay implements Payable{
 
     @Override
     public boolean pay(int amount) {
-        if(amount > limit){
-            System.out.println("잔액(한도)부족");
-        return false;    
+        if (amount > limit){
+            System.out.println("잔액(한도) 부족");
+        return false;
         }
         limit -= amount;
-        System.out.println("카드 결제 완료" + amount + " 원");
+        System.out.println("카드 결제 완료: " +amount+ "원");
         return true;
     }
+    
     
 }

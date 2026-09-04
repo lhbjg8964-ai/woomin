@@ -10,5 +10,8 @@ int main(){
        printf("%d x %d = %d\n", dan, i, dan * i);
     }
     printf("\n");
+    
+
+
     return 0;
 }

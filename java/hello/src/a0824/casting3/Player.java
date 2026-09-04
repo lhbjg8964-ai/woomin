@@ -1,3 +1,6 @@
+package a0824.casting3;
+
+
 // 야구 선수 캐스팅 — 부모 클래스
 public class Player {
     String name;

@@ -35,19 +35,20 @@ img{border:none;vertical-align: middle;}
     top:215px;
     left:50%;
   }
-#buttonList li{
+  #buttonList li{
     width: 14px;
-    height: 15px;
+    height:15px;
     /* background-color: #ccc; */
     /* border-radius: 50%; */
-    float: left;
-    margin: 0 5px;
+    float:left;
+    margin:0 5px;
     font-size: 0;
     text-indent: -9999px;
     background: url(../img/btnVisual.png) 0 -16px no-repeat;
-}
-#buttonList li.on{
-    /* background-color: #333;  */
-    /* background: url(../img/btnVisual.png) 0 0 no-repeat; */
-    background-position: 0 0;
-}
+  }
+
+    #buttonList li.on{
+        /* background-color: #333; */
+         /* background: url(../img/btnVisual.png) 0 0 no-repeat; */
+         background-position: 0 0;
+    }

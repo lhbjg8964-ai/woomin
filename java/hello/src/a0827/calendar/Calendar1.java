@@ -1,6 +1,6 @@
 package a0827.calendar;
 
-import java.util.Calendar; // 날짜와 시간을 다루기 위한 클래스
+import java.util.Calendar; //날짜와 시간을 다루기 위한 클래스
 
 public class Calendar1 {
     public static void main(String[] args) {
@@ -11,7 +11,6 @@ public class Calendar1 {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
         int second = calendar.get(Calendar.SECOND);
-        System.out.println("현재시간 :" + year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second);
+         System.out.println("현재시간 : "+year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second);
     }
-    
 }

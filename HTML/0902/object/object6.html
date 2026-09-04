@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let user = {
+    name: '홍길동',
+    age: 25,
+    city:'서울'
+};
+//for... in문
+for (let key in user) { //user 객체 속성 이름(key)를 하나씩 꺼낸다.
+    console.log(`${key}: ${user[key]}`);
+    //key name,age,city   ${user[key]} 홍길동 25 서울
+}
+    </script>
+</body>
+</html>

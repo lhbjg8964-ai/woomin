@@ -1,8 +1,8 @@
-#include <stdio.h>
+#include<stdio.h>
 int main(){
     int myNum = 15;
     float myFloatNum = 5.99;
-    char myLetter = 'D';
+    char myLetter = 'D';  
     printf("%d\n",myNum);
     printf("%.2f\n",myFloatNum);
     printf("%c\n",myLetter);

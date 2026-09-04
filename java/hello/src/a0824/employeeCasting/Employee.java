@@ -1,10 +1,10 @@
 package a0824.employeeCasting;
 
-// 직원 관리 시스템
-// 추상 클래스 ? 의미 : Employee(직원)라는 개념은 존재하지만 그냥 직원은 없음(정규직,계약직,파트타임)
-// 추상 클래스 특징 : 직접 객체 생성 불가 (Employee e = new Employee    X)
-// 반드시 자식 클래스에 상속해 주기 위해서만 존재하는 설꼐도 및 규격서
-public abstract class Employee {
+//직원관리시스템
+//추상클래스 ?  의미 : Employee(직원)라는 개념은 존재하지만 그냥 직원은 없움(정규직,계약직,파트타임)
+//추상클래스 특징 : 직접객체생성 불가 (Employee e = new Employee   X)  
+//반드시 자식 클래스에 상속해 주기 위해서만 존재하는 설계도및 규격서
+abstract class Employee {
     protected String name;
     protected int id;
     protected double baseSalary;
@@ -13,21 +13,20 @@ public abstract class Employee {
         this.id = id;
         this.baseSalary = baseSalary;
     }
-    
-    
-    // 추상메서드 정규직(기본급+보너스), 계약직(기본급고정), 파트타임(일한시간 * 시급) 직원 타입마다 다름 
-    // protected 같은 패키지(폴더) 내부, 쿨래스를 상속받은 자식 클래스
+
+    //추상메서드 : 정규직(기본급+보너스), 계약직(기본급고정), 파트타임(일한시간* 시급) 직원 타입마다 다름
+    //protected 같은 패키지(폴더) 내부, 클래스를 상속받은 자식 클래스  
     abstract double calculateSalary();
 
     public String getName() {
         return name;
     }
 
-    // 공통 메서드
-    void printInfo(){
-        System.out.println("ID: " + id + ", 이름: " + name +
-                            ", 기본급: " + baseSalary + 
-                            ", 실급여: " + calculateSalary());
+  // 공통 메서드
+    void printInfo() {
+        System.out.println("ID: " + id + ", 이름: " + name + 
+                          ", 기본급: " + baseSalary + 
+                          ", 실급여: " + calculateSalary());
     }
-    
+
 }

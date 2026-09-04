@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//속성 삭제        
+let user = {
+    name: '홍길동',
+    age: 25,
+    greet: function(){
+         return `안녕하세요, ${this.name}님!`;
+    }
+};
+
+console.log(user.greet());  // "안녕하세요, 홍길동님!"
+
+    </script>
+</body>
+</html>

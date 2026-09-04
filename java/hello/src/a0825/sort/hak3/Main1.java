@@ -1,12 +1,13 @@
 package a0825.sort.hak3;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main1 {
     public static void main(String[] args) {
-         Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         ArrayList<Student> students = new ArrayList<>();
       
 
@@ -25,32 +26,37 @@ public class Main1 {
         System.out.println("2. 나이");
         System.out.println("3. 학번");
         int choice = sc.nextInt();
+        sc.nextLine();
         switch (choice) {
             case 1:
                 //이름으로 정렬
-                Collection.sort(students, new NameComparator());
+                Collections.sort(students, new NameComparator());
                 break;
             case 2:
-                
-                Collection.sort(students, new AgeComparator());
+                Collections.sort(students, new AgeComparator());
                 break;
             case 3:
-                
-                Collection.sort(students, new IdComparator());
-                break;
-        
+                Collections.sort(students, new IdComparator());
+                break;       
             default:
                 break;
         }
-        // 정렬된 결과 출력
+         // 정렬된 결과 출력
         System.out.println("정렬된 학생 목록:");
-        for (Student student : students){
+        for (Student student : students) {
             System.out.println(student);
         }
         sc.close();
     }
-    
 }
+//1. Student가 자기 자신의 기본 정렬 방법을 가지고 정렬
+//hak2에서는 class Student implements Comparable<Student>
+// @Override
+// public int compareTo(Student o) {
+//     return Integer.compare(this.age, o.age);
+// }
+
+//Stuent에 정렬기능이 없음
 
 class Student{
     private String name;
@@ -91,5 +97,24 @@ class Student{
     public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
+}
+class AgeComparator implements Comparator<Student>{
+    @Override
+    public int compare(Student o1, Student o2){
+        return Integer.compare(o1.getAge(), o2.getAge());
+    }
+}
+class IdComparator implements Comparator<Student>{
+//내장 함수로 id순 정렬
+    @Override
+    public int compare(Student o1, Student o2) {
+        return Integer.compare(o1.getStudentId(), o2.getStudentId());
+    }
 
 }
+
+//Comparable - 정렬대상 클래스 내부 Student 클래스내부 - 정렬기준이 1개
+// 메서드는 compareTo() - 실무 활용이 적다.
+
+// Comparator - 별도 클래스(외부) - 정렬기준을 여러개  
+// 메서드는 compare() - 실무활용이 많음 

@@ -2,9 +2,9 @@ package a0812.exception;
 
 import java.util.Scanner;
 
-public class ExceptionTest {
+public class exceptionTest {
     public static void main(String[] args) {
-      Scanner sc = new Scanner(System.in);
+          Scanner sc = new Scanner(System.in);
 
         System.out.print("숫자를 입력하세요: ");
 
@@ -19,8 +19,9 @@ public class ExceptionTest {
             System.out.println("숫자만 입력하세요.");
 
         }
-    // abc(문자를 입력할 경우)  숫자만 입력하세요. 프로그램 종료 프린트됨
-        System.out.println("프로그램 종료");   
+// abc(문자를 입력할 경우) 숫자만 입력하세요. 프로그램 종료 프린트됨
+
+        System.out.println("프로그램 종료");
+
     }
-    
 }

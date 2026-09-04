@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let user = {
+    name: '홍길동',
+    age: 25,
+    city: '서울'
+};
+//let name = user.name; 
+//let age = user.age; 
+//console.log(name); 
+// 홍길동 console.log(age); // 25
+
+
+// 구조 분해
+let {name, age} = user;
+console.log(name);  // '홍길동' - 원래는 user.name 
+console.log(age);   // 25
+
+// 변수명 변경
+let {name: userName, age: userAge} = user;
+console.log(userName);  // '홍길동' 
+    </script>
+</body>
+</html>

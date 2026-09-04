@@ -1,6 +1,6 @@
 package a0824.employeeCasting;
 
-public class FullTimeEmployee extends Employee{
+public class FullTimeEmployee extends Employee {
     private double bonus;
 
     public FullTimeEmployee(String name, int id, double baseSalary, double bonus) {
@@ -10,11 +10,11 @@ public class FullTimeEmployee extends Employee{
 
     @Override
     double calculateSalary() {
-        return baseSalary + bonus;
+       return  baseSalary + bonus;
     }
 
-    void workFullTime(){
+     void workFullTime(){
         System.out.println(name + "이(가) 정규직으로 일합니다.");
     }
-    
+
 }

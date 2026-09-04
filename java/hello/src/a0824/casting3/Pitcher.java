@@ -1,3 +1,8 @@
+package a0824.casting3;
+
+
+
+
 // 투수 — 방어율(era), 탈삼진(strikeOut)
 public class Pitcher extends Player {
     double era;

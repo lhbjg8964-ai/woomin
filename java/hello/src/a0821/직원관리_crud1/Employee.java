@@ -1,15 +1,15 @@
 package a0821.직원관리_crud1;
 
 public class Employee {
-    private String id; // E001
-    private String name; // 이름
-    private String dept; // 부서
-    private int salary; // 연봉
-
+    private String id; //E001
+    private String name;
+    private String dept; //부서
+    private int salary; //연봉
+   
     public String getId() {
         return id;
     }
-    // public void setId(String id) { 수정 불가 때문에 지움
+    // public void setId(String id) {
     //     this.id = id;
     // }
     public String getName() {
@@ -38,9 +38,10 @@ public class Employee {
     }
     @Override
     public String toString() {
-        return "사번 : " + id + " | 이름 : " + name + " | 부서 : " + dept + " | 연봉 : " + salary + "만원" ;
+        return "사번: "+id + " | 이름: "+name + " | 부서: "+dept+" | 연봉:" + salary + "만원" ;
     }
+
     
-    
+ 
     
 }

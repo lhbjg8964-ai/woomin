@@ -1,8 +1,8 @@
 package a0824.casting2;
 
 public class Truck extends Vehicle {
-    private int workHours;
-    private double hourlyRate;
+    private int workHours;//시간
+    private double hourlyRate; //운임
     
     public Truck(String name, int id, double baseFee,int workHours, double hourlyRate) {
         super(name, id, baseFee);

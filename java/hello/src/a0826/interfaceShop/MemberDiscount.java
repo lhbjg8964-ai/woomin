@@ -1,6 +1,6 @@
 package a0826.interfaceShop;
 
-public class MemberDiscount implements Discount{
+public class MemberDiscount implements Discount {
 
     @Override
     public double apply(int price) {
@@ -9,7 +9,7 @@ public class MemberDiscount implements Discount{
 
     @Override
     public String getName() {
-        return "회원할인";
+         return "회원할인";
     }
     
 }
