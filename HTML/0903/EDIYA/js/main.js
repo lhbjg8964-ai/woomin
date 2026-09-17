@@ -15,9 +15,3 @@ $(function(){
     });
 
 });
-$(function () {         
-    $(".close_btn a").on("click", function (e) {
-        e.preventDefault();
-        $(".pop_slide_bn").fadeOut();
-    });
-});

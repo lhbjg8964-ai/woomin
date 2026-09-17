@@ -18,7 +18,7 @@ $(function(){
     });
 
     $('.pause').on('click',function(){
-        if($(this).hasClass('on') == 'true'){
+        if($(this).hasClass('on') == true){
             $(this).removeClass('on');
             slide1.startAuto();
         }else{

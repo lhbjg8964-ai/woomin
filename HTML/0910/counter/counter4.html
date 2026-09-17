@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+    $(function(){
+        //id num 내용을 읽어와서 number 대입
+        $('.count > li').each(function(i){     //i 는 인덱스 번호
+            var t = $(this);
+            var number = t.attr('data-num');
+            $({percent:0}).animate({percent:number},{
+                duration:3000,
+                progress:function(){
+                    var now = this.percent;
+                    t.text(Math.ceil(now));//소수점이하 올린다.
+                }
+            });
+        });    
+    });
+    //{percent:0} : 초기값이 0 인 객체 생성
+     //{percent:111} : 최종값이 111 인 객체 생성
+     // duration:3000 애니메이션 지속시간 
+        //progress 함수는 애니메이션 진행중에 호출
+        // 현재 진행상태를 나타내는 percent 속성을 사용하여
+        //html #num 요소의 내용을 업데이트
+    </script>
+</head>
+<body>
+<ul class="count">
+    <li class="num" data-num="300">000</li>
+    <li class="num" data-num="200">000</li>
+    <li class="num" data-num="100">000</li>
+</ul>    
+</body>
+</html>
