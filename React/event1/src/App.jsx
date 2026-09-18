@@ -30,16 +30,19 @@ function App() {
       id: 1,
       username: "velopert",
       email: "public.velopert@gmail.com",
+      active:true,
     },
     {
       id: 2,
       username: "tester",
       email: "tester@example.com",
+      active:true,
     },
     {
       id: 3,
       username: "liz",
       email: "liz@example.com",
+      active:false,
     },
   ]);
   const nextId = useRef(4); // 초기값을 4지정(더미데이터로 아이디 이미 3번까지 지정)
