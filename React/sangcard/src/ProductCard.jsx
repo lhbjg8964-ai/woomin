@@ -1,11 +1,11 @@
 function formatPrice(price) {
   return price.toLocaleString('ko-KR') + '원'
-}
+} //3,000 원
 
 function ProductCard({ name, price, description, image, discount }) {
   const hasDiscount = discount != null && discount > 0
   const finalPrice = hasDiscount
-    ? Math.round(price * (1 - discount / 100))
+    ? Math.round(price * (1 - discount / 100)) //최종가격
     : price
 
   return (
@@ -19,7 +19,7 @@ function ProductCard({ name, price, description, image, discount }) {
         position: 'relative',
       }}
     >
-      {hasDiscount && (
+      {hasDiscount && ( //hasDiscount 있으면 && 뒤에를 실행
         <span
           style={{
             position: 'absolute',

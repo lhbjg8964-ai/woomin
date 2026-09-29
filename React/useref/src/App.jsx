@@ -1,27 +1,27 @@
-import Userlist from './Userlist'
-
-const users = [
+import UserList from './UserList'
+ const users = [
     {
-      id: 1,
-      username: "velopert",
-      email: "public.velopert@gmail.com",
+        id:1,
+        username : 'velopert',
+        email : 'public.velopert@gmail.com'
     },
-    {
+     {
       id: 2,
-      username: "tester",
-      email: "tester@example.com",
+      username: 'tester',
+      email: 'tester@example.com'
     },
     {
       id: 3,
-      username: "liz",
-      email: "liz@example.com",
-    },
-  ];
+      username: 'liz',
+      email: 'liz@example.com'
+    }
+   ];
+
 function App() {
   return (
     <div>
-      {/*</InputSample> */}
-      <Userlist users = {users}/>
+      {/* <InputSample/> */}
+      <UserList users={users}/>
     </div>
   )
 }

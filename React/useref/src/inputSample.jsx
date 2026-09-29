@@ -1,7 +1,9 @@
-import { useState, useRef } from 'react';
+import  { useState, useRef } from 'react';
 
 
-// useState, useRef 훅 (함수형 컴포넌트에서 react 기능을 사용할 수 있게해주는 함수)
+//useState, useRef 훅 (함수형 컴포넌트에서 react 기능을 사용할 수있게해주는 함수)
+//useState - 상태관리(변수의 값변화 관리)
+//useRef Dom이나 값 저장
 function InputSample() {
   const [inputs, setInputs] = useState({
     name: '',
@@ -24,7 +26,7 @@ function InputSample() {
       name: '',
       nickname: ''
     });
-    nameInput.current.focus(); //특정 DOM 선택, 커서를 클릭 역할
+    nameInput.current.focus(); //특정 DOM 선택 커서를 클릭역할
   };
 
   return (
